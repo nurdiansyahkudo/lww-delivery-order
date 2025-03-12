@@ -13,7 +13,7 @@
                 <button name="action_print_report" 
                         groups="stock.group_stock_user" 
                         type="object" 
-                        invisible="picking_type_code != 'outgoing'" 
+                        invisible="picking_type_code not in ('outgoing', 'dropship')" 
                         data-hotkey="o" 
                         class="oe_highlight" 
                         string="Print DO"/>
