@@ -7,8 +7,8 @@
             model="stock.picking"
             string="Receipt Goods"
             report_type="qweb-pdf"
-            name="lww_kwitansi.lww_receipt_template"
-            file="lww_kwitansi.lww_receipt_template"
+            name="lww_delivery.lww_receipt_template"
+            file="lww_delivery.lww_receipt_template"
             print_report_name="'Receipt Goods - %s' % (object.receipt_no)"
         />
 
@@ -18,8 +18,8 @@
             model="stock.picking"
             string="Receipt Goods"
             report_type="qweb-pdf"
-            name="lww_kwitansi.bs_receipt_template"
-            file="lww_kwitansi.bs_receipt_template"
+            name="lww_delivery.bs_receipt_template"
+            file="lww_delivery.bs_receipt_template"
             print_report_name="'Receipt Goods - %s' % (object.receipt_no)"
         />
         
@@ -29,8 +29,8 @@
             model="stock.picking"
             string="Receipt Goods"
             report_type="qweb-pdf"
-            name="lww_kwitansi.spartadua_receipt_template"
-            file="lww_kwitansi.spartadua_receipt_template"
+            name="lww_delivery.spartadua_receipt_template"
+            file="lww_delivery.spartadua_receipt_template"
             print_report_name="'Receipt Goods - %s' % (object.receipt_no)"
         />
 
@@ -66,42 +66,42 @@
         <record id="action_report_limawira_receipt" model="ir.actions.report">
             <field name="name">Print Receipt</field>
             <field name="model">stock.picking</field>
-            <field name="report_name">lww_kwitansi.lww_receipt_template</field>
-            <field name="report_file">lww_kwitansi.lww_receipt_template</field>
+            <field name="report_name">lww_delivery.lww_receipt_template</field>
+            <field name="report_file">lww_delivery.lww_receipt_template</field>
             <field name="print_report_name">(object.get_receipt_report_name())</field>
             <field name="attachment"/>
             <field name="report_type">qweb-pdf</field>
             <field name="binding_model_id" ref="stock.model_stock_picking"/>
             <field name="binding_type">report</field>
-            <field name="paperformat_id" ref="lww_kwitansi.paperformat_portrait"/>
+            <field name="paperformat_id" ref="lww_delivery.paperformat_portrait"/>
         </record>
 
         <!-- BINA SERVICE -->
         <record id="action_report_bs_receipt" model="ir.actions.report">
             <field name="name">Print Receipt Bina Service</field>
             <field name="model">stock.picking</field>
-            <field name="report_name">lww_kwitansi.bs_receipt_template</field>
-            <field name="report_file">lww_kwitansi.bs_receipt_template</field>
+            <field name="report_name">lww_delivery.bs_receipt_template</field>
+            <field name="report_file">lww_delivery.bs_receipt_template</field>
             <field name="print_report_name">(object.get_receipt_report_name())</field>
             <field name="attachment"/>
             <field name="report_type">qweb-pdf</field>
             <field name="binding_model_id" ref="stock.model_stock_picking"/>
             <field name="binding_type">report</field>
-            <field name="paperformat_id" ref="lww_kwitansi.paperformat_portrait"/>
+            <field name="paperformat_id" ref="lww_delivery.paperformat_portrait"/>
         </record>
 
         <!-- SPARTADUA RIBUJAYA -->
         <record id="action_report_spartadua_receipt" model="ir.actions.report">
             <field name="name">Print Receipt Spartadua</field>
             <field name="model">stock.picking</field>
-            <field name="report_name">lww_kwitansi.spartadua_receipt_template</field>
-            <field name="report_file">lww_kwitansi.spartadua_receipt_template</field>
+            <field name="report_name">lww_delivery.spartadua_receipt_template</field>
+            <field name="report_file">lww_delivery.spartadua_receipt_template</field>
             <field name="print_report_name">(object.get_receipt_report_name())</field>
             <field name="attachment"/>
             <field name="report_type">qweb-pdf</field>
             <field name="binding_model_id" ref="stock.model_stock_picking"/>
             <field name="binding_type">report</field>
-            <field name="paperformat_id" ref="lww_kwitansi.paperformat_portrait"/>
+            <field name="paperformat_id" ref="lww_delivery.paperformat_portrait"/>
         </record>
     </data>
 </odoo>
