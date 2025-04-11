@@ -9,23 +9,23 @@ class StockPicking(models.Model):
     receipt_no = fields.Char(string='Receipt Number', store=True, required=True)
 
     def action_print_report(self):
-        # company = self.env['res.company'].browse(self.env.company.id)
+        company = self.env['res.company'].browse(self.env.company.id)
         
-        # if company.name == 'PT. BINA SERVICE':
-        #     return self.env.ref('lww_delivery.action_report_bs_do').report_action(self)
-        # elif company.name == 'PT. SPARTADUA RIBUJAYA':
-        #     return self.env.ref('lww_delivery.action_report_spartadua_do').report_action(self)
-        # else:
-        #     # Jika perusahaan tidak cocok dengan ketiganya, menggunakan laporan default
-        #     return self.env.ref('lww_delivery.action_report_limawira_do').report_action(self)
-        return {
-            'type': 'ir.actions.act_window',
-            'name': 'Print DO Options',
-            'res_model': 'print.do.wizard',
-            'view_mode': 'form',
-            'target': 'new',
-            'context': {'active_id': self.id},
-        }
+        if company.name == 'PT. BINA SERVICE':
+            return self.env.ref('lww_delivery.action_report_bs_do').report_action(self)
+        elif company.name == 'PT. SPARTADUA RIBUJAYA':
+            return self.env.ref('lww_delivery.action_report_spartadua_do').report_action(self)
+        else:
+            # Jika perusahaan tidak cocok dengan ketiganya, menggunakan laporan default
+            return self.env.ref('lww_delivery.action_report_limawira_do').report_action(self)
+        # return {
+        #     'type': 'ir.actions.act_window',
+        #     'name': 'Print DO Options',
+        #     'res_model': 'print.do.wizard',
+        #     'view_mode': 'form',
+        #     'target': 'new',
+        #     'context': {'active_id': self.id},
+        # }
 
     
     def action_print_receipt_report(self):

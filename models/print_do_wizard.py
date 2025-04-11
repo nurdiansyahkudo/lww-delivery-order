@@ -1,7 +1,7 @@
 from odoo import models, fields
 
 class PrintDoWizard(models.TransientModel):
-    _name = 'print.do.wizard'
+    _name = 'print.do'
     _description = 'Print DO Wizard'
 
     option = fields.Selection([
