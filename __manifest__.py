@@ -17,8 +17,11 @@
         'views/lww_do_template.xml',
         'views/bs_do_template.xml',
         'views/spartadua_do_template.xml',
+        # DELIVERY ORDER NO HEADER
+        'views/lww_do_template_without_header.xml',
         # FORM VIEW
         'views/stock_picking_view.xml',
+        'views/print_do_wizard_view.xml',
     ],
     'installable': True,
     'application': False,

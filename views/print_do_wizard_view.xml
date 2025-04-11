@@ -1,0 +1,24 @@
+<odoo>
+    <record id="view_print_do_wizard_form" model="ir.ui.view">
+        <field name="name">print.do.wizard.form</field>
+        <field name="model">print.do.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Print DO Options">
+                <group>
+                    <field name="option"/>
+                </group>
+                <footer>
+                    <button string="Confirm" type="object" name="action_confirm" class="oe_highlight"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_print_do_wizard" model="ir.actions.act_window">
+        <field name="name">Print DO Options</field>
+        <field name="res_model">print.do.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

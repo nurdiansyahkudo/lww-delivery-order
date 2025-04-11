@@ -75,6 +75,19 @@
             <field name="binding_type">report</field>
             <field name="paperformat_id" ref="lww_delivery.paperformat_portrait"/>
         </record>
+        <!-- LIMAWIRA NO HEADER -->
+        <record id="action_report_limawira_do_without_header" model="ir.actions.report">
+            <field name="name">Print DO without Header</field>
+            <field name="model">stock.picking</field>
+            <field name="report_name">lww_delivery.lww_do_template_without_header</field>
+            <field name="report_file">lww_delivery.lww_do_template_without_header</field>
+            <field name="print_report_name">(object.get_print_report_name())</field>
+            <field name="attachment"/>
+            <field name="report_type">qweb-pdf</field>
+            <field name="binding_model_id" ref="stock.model_stock_picking"/>
+            <field name="binding_type">report</field>
+            <field name="paperformat_id" ref="lww_delivery.paperformat_portrait"/>
+        </record>
 
         <!-- BINA SERVICE -->
         <record id="action_report_bs_do" model="ir.actions.report">
