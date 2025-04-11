@@ -1,2 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_lww_delivery_lww_delivery,lww_delivery.lww_delivery,model_lww_delivery_lww_delivery,base.group_user,1,1,1,1
+access_print_do_wizard,access_print_do_wizard,model_print_do_wizard,base.group_user,1,1,1,1
+

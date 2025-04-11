@@ -22,6 +22,8 @@
         # FORM VIEW
         'views/stock_picking_view.xml',
         'views/print_do_wizard_view.xml',
+        # SECURITY (ACCESS)
+        'security/ir.model.access.csv',
     ],
     'installable': True,
     'application': False,
