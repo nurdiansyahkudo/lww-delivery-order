@@ -7,6 +7,12 @@ class StockPicking(models.Model):
 
     no_do = fields.Char(string='DO Number', store=True)
     receipt_no = fields.Char(string='Receipt Number', store=True)
+    employee_id = fields.Many2many(
+        'hr.employee',
+        string="Responsible",
+        compute="_compute_employee_id",
+        store=True
+    )
 
     def action_print_report(self):
         company = self.env['res.company'].browse(self.env.company.id)
@@ -52,7 +58,7 @@ class StockPicking(models.Model):
         return super().write(vals)
     
     def get_print_report_name(self):
-        return 'Delivery Order - %s' % (self.no_do)
+        return 'Delivery Order - %s' % (self.name)
     
     def get_receipt_report_name(self):
-        return 'Receipt Goods - %s' % (self.receipt_no)
+        return 'Receipt Goods - %s' % (self.name)

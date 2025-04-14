@@ -34,6 +34,10 @@
                 <field name="no_do" string="DO Number" readonly="state not in ('draft', 'waiting', 'confirmed', 'assigned')" invisible="picking_type_code != 'outgoing'"/>
                 <field name="receipt_no" string="Receipt Number" readonly="state not in ('draft', 'waiting', 'confirmed', 'assigned')" invisible="picking_type_code != 'incoming'"/>
             </xpath>
+
+            <xpath expr="//group[@name='other_infos']/field[@name='user_id']" position="replace">
+                <field name="employee_id" widget="many2many_tags" string="Responsible" readonly="state in ['cancel', 'done']"/>
+            </xpath>
         </field>
     </record>
     <!-- DO Tree -->
