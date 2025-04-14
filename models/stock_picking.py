@@ -10,7 +10,6 @@ class StockPicking(models.Model):
     employee_id = fields.Many2many(
         'hr.employee',
         string="Responsible",
-        compute="_compute_employee_id",
         store=True
     )
 
