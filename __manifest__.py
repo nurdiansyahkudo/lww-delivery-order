@@ -21,7 +21,6 @@
         # 'views/lww_do_template_without_header.xml',
         # FORM VIEW
         'views/stock_picking_view.xml',
-        # 'views/print_do_wizard_view.xml',
         # SECURITY (ACCESS)
         # 'security/ir.model.access.csv',
     ],
