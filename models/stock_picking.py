@@ -12,6 +12,8 @@ class StockPicking(models.Model):
         string="Responsible",
         store=True
     )
+    sale_id = fields.Many2one('sale.order', compute="_compute_sale_id", inverse="_set_sale_id", string="Sales Order", store=True, index='btree_not_null', required=True)
+    project_id = fields.Many2one('project.project', required=True)
 
     def action_print_report(self):
         company = self.env['res.company'].browse(self.env.company.id)
