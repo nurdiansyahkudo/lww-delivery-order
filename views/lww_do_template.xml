@@ -256,8 +256,8 @@
                                         </div>
                                         <div class="col-4 text-center" style="margin-bottom: 5px;">
                                             <p>APPROVED BY</p>
-                                            <p style="margin-top: 60px;">( ___________________ )
-                                                <span t-esc="o.project_id.name or ''" style="font-size: 15px;"/>
+                                            <p style="margin-top: 60px;">
+                                               ( <span t-esc="o.employee_id.name or ''" style="font-size: 15px;"/> )
                                             </p>
                                         </div>
                                     </div>
