@@ -18,15 +18,6 @@ class StockPicking(models.Model):
         else:
             # Jika perusahaan tidak cocok dengan ketiganya, menggunakan laporan default
             return self.env.ref('lww_delivery.action_report_limawira_do').report_action(self)
-        # return {
-        #     'type': 'ir.actions.act_window',
-        #     'name': 'Print DO Options',
-        #     'res_model': 'print.do.wizard',
-        #     'view_mode': 'form',
-        #     'target': 'new',
-        #     'context': {'active_id': self.id},
-        # }
-
     
     def action_print_receipt_report(self):
         company = self.env['res.company'].browse(self.env.company.id)
