@@ -5,8 +5,8 @@ from num2words import num2words
 class StockPicking(models.Model):
     _inherit = "stock.picking"
 
-    no_do = fields.Char(string='DO Number', store=True, required=True)
-    receipt_no = fields.Char(string='Receipt Number', store=True, required=True)
+    no_do = fields.Char(string='DO Number', store=True)
+    receipt_no = fields.Char(string='Receipt Number', store=True)
 
     def action_print_report(self):
         company = self.env['res.company'].browse(self.env.company.id)
