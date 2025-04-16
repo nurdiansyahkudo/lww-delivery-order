@@ -15,14 +15,14 @@ class StockPicking(models.Model):
     sale_id = fields.Many2one('sale.order', compute="_compute_sale_id", inverse="_set_sale_id", string="Sales Order", store=True, index='btree_not_null')
     project_id = fields.Many2one('project.project', string="Project")
 
-    @api.constrains('picking_type_id', 'sale_id', 'project_id')
-    def _check_required_if_outgoing(self):
-        for rec in self:
-            if rec.picking_type_id and rec.picking_type_id.code == 'outgoing':
-                if not rec.sale_id:
-                    raise ValidationError("Sales Order harus diisi untuk Delivery Order")
-                if not rec.project_id:
-                    raise ValidationError("Project harus diisi untuk Delivery Order")
+    # @api.constrains('picking_type_id', 'sale_id', 'project_id')
+    # def _check_required_if_outgoing(self):
+    #     for rec in self:
+    #         if rec.picking_type_id and rec.picking_type_id.code == 'outgoing':
+    #             if not rec.sale_id:
+    #                 raise ValidationError("Sales Order harus diisi untuk Delivery Order")
+    #             if not rec.project_id:
+    #                 raise ValidationError("Project harus diisi untuk Delivery Order")
 
     def action_print_report(self):
         company = self.env['res.company'].browse(self.env.company.id)
