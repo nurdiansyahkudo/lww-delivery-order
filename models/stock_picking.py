@@ -12,7 +12,7 @@ class StockPicking(models.Model):
         string="Responsible",
         store=True
     )
-    sale_id = fields.Many2one('sale.order', compute="_compute_sale_id", inverse="_set_sale_id", string="Sales Order", store=True, index='btree_not_null', required=True)
+    sale_id = fields.Many2one('sale.order', compute="_compute_sale_id", inverse="_set_sale_id", string="Sales Order", store=True, index='btree_not_null')
     project_id = fields.Many2one('project.project', string="Project", required=True)
 
     @api.onchange('partner_id')
