@@ -41,6 +41,7 @@
         </field>
     </record>
 
+    <!-- Project Field in Other Info -->
     <record id="stock_picking_form_inherit_project" model="ir.ui.view">
         <field name="name">stock.picking.form.inherit.project</field>
         <field name="model">stock.picking</field>
