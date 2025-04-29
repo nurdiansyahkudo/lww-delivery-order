@@ -12,8 +12,15 @@ class StockPicking(models.Model):
         string="Responsible",
         store=True
     )
-    sale_id = fields.Many2one('sale.order', compute="_compute_sale_id", inverse="_set_sale_id", string="Sales Order", store=True, index='btree_not_null')
-    project_id = fields.Many2one('project.project', string="Project")
+    sale_id = fields.Many2one('sale.order', compute="_compute_sale_id", inverse="_set_sale_id", string="Sales Order", store=True, index='btree_not_null', required=True)
+    project_id = fields.Many2one('project.project', string="Project", required=True)
+
+    @api.onchange('partner_id')
+    def _onchange_partner_id(self):
+        return {
+            'domain': {'project_id': [('partner_id', '=', self.partner_id.id)]},
+            'value': {'project_id': False},
+        }
 
     # @api.constrains('picking_type_id', 'sale_id', 'project_id')
     # def _check_required_if_outgoing(self):
