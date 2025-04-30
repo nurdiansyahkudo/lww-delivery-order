@@ -7,21 +7,10 @@
                 <t t-foreach="docs" t-as="o">
                     <!-- Header Section -->
                     <div class="row" style="border-bottom: 2px solid rgb(0, 0, 0);">
-                        <div class="col-6" style="height: 150px; display: flex; flex-direction: column; justify-content: center;">
-                            <div class="text-center" style="font-size: 30px;">
-                                <div class="row">
-                                    <h1 style="font-size: 2rem;">
-                                        <strong>DELIVERY ORDER</strong>
-                                    </h1>
-                                </div>
-                                <!-- <div class="row">
-                                    <h1 style="font-size: 1.5rem;">
-                                        <strong>
-                                            <span t-esc="(o.name + ' ' + o.no_do) if o.name and o.no_do else (o.name or o.no_do or '')"/>
-                                        </strong>
-                                    </h1>
-                                </div> -->
-                            </div>
+                        <div class="text-center" style="height: 150px; display: flex; flex-direction: column; justify-content: center; font-size: 30px;">
+                            <h1 style="font-size: 2rem;">
+                                <strong>DELIVERY ORDER</strong>
+                            </h1>
                         </div>
                         <!-- <div class="col-6">
                             <img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % o.company_id.logo.decode()" 
