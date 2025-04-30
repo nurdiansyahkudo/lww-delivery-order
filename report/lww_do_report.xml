@@ -11,6 +11,15 @@
             file="lww_delivery.lww_do_template"
             print_report_name="'Delivery Order - %s' % (object.name)"
         />
+        <report
+            id="lww_do_report_no_header"
+            model="stock.picking"
+            string="Delivery Order"
+            report_type="qweb-pdf"
+            name="lww_delivery.lww_do_template_no_header"
+            file="lww_delivery.lww_do_template_no_header"
+            print_report_name="'Delivery Order - %s' % (object.name)"
+        />
 
         <!-- BINA SERVICE -->
         <report
@@ -76,11 +85,11 @@
             <field name="paperformat_id" ref="lww_delivery.paperformat_portrait"/>
         </record>
         <!-- LIMAWIRA NO HEADER -->
-        <record id="action_report_limawira_do_without_header" model="ir.actions.report">
+        <record id="action_report_limawira_do_no_header" model="ir.actions.report">
             <field name="name">Print DO without Header</field>
             <field name="model">stock.picking</field>
-            <field name="report_name">lww_delivery.lww_do_template_without_header</field>
-            <field name="report_file">lww_delivery.lww_do_template_without_header</field>
+            <field name="report_name">lww_delivery.lww_do_template_no_header</field>
+            <field name="report_file">lww_delivery.lww_do_template_no_header</field>
             <field name="print_report_name">(object.get_print_report_name())</field>
             <field name="attachment"/>
             <field name="report_type">qweb-pdf</field>

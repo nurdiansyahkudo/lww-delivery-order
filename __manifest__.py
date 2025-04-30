@@ -18,7 +18,7 @@
         'views/bs_do_template.xml',
         'views/spartadua_do_template.xml',
         # DELIVERY ORDER NO HEADER
-        # 'views/lww_do_template_without_header.xml',
+        'views/lww_do_template_no_header.xml',
         # FORM VIEW
         'views/stock_picking_view.xml',
         # SECURITY (ACCESS)

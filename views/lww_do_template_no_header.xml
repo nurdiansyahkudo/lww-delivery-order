@@ -2,7 +2,7 @@
 <odoo>
     <data>
         <!-- Template for Kwitansi -->
-        <template id="lww_do_template_without_header">
+        <template id="lww_do_template_no_header">
             <t t-call="web.external_layout">
                 <t t-foreach="docs" t-as="o">
                     <!-- Header Section -->
@@ -14,13 +14,13 @@
                                         <strong>DELIVERY ORDER</strong>
                                     </h1>
                                 </div>
-                                <div class="row">
+                                <!-- <div class="row">
                                     <h1 style="font-size: 1.5rem;">
                                         <strong>
                                             <span t-esc="(o.name + ' ' + o.no_do) if o.name and o.no_do else (o.name or o.no_do or '')"/>
                                         </strong>
                                     </h1>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                         <!-- <div class="col-6">
@@ -268,10 +268,10 @@
         </template>
 
         <!-- Wrapper Template -->
-        <template id="lww_do_without_header">
+        <template id="lww_do_no_header">
             <t t-call="web.html_container">
                 <t t-foreach="docs" t-as="o">
-                    <t t-call="lww_do_template_without_header" t-lang="o.partner_id.lang"/>
+                    <t t-call="lww_do_template_no_header" t-lang="o.partner_id.lang"/>
                 </t>
             </t>
         </template>

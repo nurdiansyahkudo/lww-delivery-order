@@ -8,15 +8,26 @@
             <!-- Hapus tombol lama -->
             <xpath expr="//button[@name='do_print_picking']" position="replace"/>
 
-            <!-- Tombol Print DO -->
+            <!-- Print DO: With Header -->
             <xpath expr="//header" position="inside">
-                <button name="action_print_report" 
-                        groups="stock.group_stock_user" 
-                        type="object" 
-                        invisible="picking_type_code not in ('outgoing', 'dropship')" 
-                        data-hotkey="o" 
-                        class="oe_highlight" 
-                        string="Print DO"/>
+                <button name="action_print_report"
+                        groups="stock.group_stock_user"
+                        type="object"
+                        string="Print DO"
+                        data-hotkey="o"
+                        class="oe_highlight"
+                        invisible="picking_type_code not in ('outgoing', 'dropship') or print_template != 'with_header'"/>
+            </xpath>
+
+            <!-- Print DO: Without Header -->
+            <xpath expr="//header" position="inside">
+                <button name="action_print_report_no_header"
+                        groups="stock.group_stock_user"
+                        type="object"
+                        string="Print No Header"
+                        data-hotkey="o"
+                        class="oe_highlight"
+                        invisible="picking_type_code not in ('outgoing', 'dropship') or print_template != 'without_header'"/>
             </xpath>
 
             <!-- Tombol Print Receipt -->
@@ -30,6 +41,10 @@
                         string="Print Receipt"/>
             </xpath>
             
+            <xpath expr="//field[@name='origin']" position="after">
+                <field name="print_template" widget="radio" invisible="picking_type_code != 'outgoing'"/>
+            </xpath>
+
             <xpath expr="//field[@name='location_id']" position="after">
                 <field name="no_do" string="DO Number" readonly="state not in ('draft', 'waiting', 'confirmed', 'assigned')" invisible="picking_type_code != 'outgoing'"/>
                 <field name="receipt_no" string="Receipt Number" readonly="state not in ('draft', 'waiting', 'confirmed', 'assigned')" invisible="picking_type_code != 'incoming'"/>

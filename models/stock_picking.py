@@ -15,6 +15,11 @@ class StockPicking(models.Model):
     sale_id = fields.Many2one('sale.order', compute="_compute_sale_id", inverse="_set_sale_id", string="Sales Order", store=True, index='btree_not_null')
     project_id = fields.Many2one('project.project', string="Project", required=True)
 
+    print_template = fields.Selection([
+        ('with_header', 'With Header'),
+        ('without_header', 'Without Header'),
+    ], string="Print Template", default='with_header', required=True)
+
     @api.onchange('partner_id')
     def _onchange_partner_id(self):
         return {
@@ -22,15 +27,7 @@ class StockPicking(models.Model):
             'value': {'project_id': False},
         }
 
-    # @api.constrains('picking_type_id', 'sale_id', 'project_id')
-    # def _check_required_if_outgoing(self):
-    #     for rec in self:
-    #         if rec.picking_type_id and rec.picking_type_id.code == 'outgoing':
-    #             if not rec.sale_id:
-    #                 raise ValidationError("Sales Order harus diisi untuk Delivery Order")
-    #             if not rec.project_id:
-    #                 raise ValidationError("Project harus diisi untuk Delivery Order")
-
+    # print DO with header
     def action_print_report(self):
         company = self.env['res.company'].browse(self.env.company.id)
         
@@ -41,6 +38,17 @@ class StockPicking(models.Model):
         else:
             # Jika perusahaan tidak cocok dengan ketiganya, menggunakan laporan default
             return self.env.ref('lww_delivery.action_report_limawira_do').report_action(self)
+    
+    # print DO without header
+    def action_print_report_no_header(self):
+        company = self.env['res.company'].browse(self.env.company.id)
+
+        if company.name == 'PT. BINA SERVICE':
+            return self.env.ref('lww_delivery.action_report_bs_do_no_header').report_action(self)
+        elif company.name == 'PT. SPARTADUA RIBUJAYA':
+            return self.env.ref('lww_delivery.action_report_spartadua_do_no_header').report_action(self)
+        else:
+            return self.env.ref('lww_delivery.action_report_limawira_do_no_header').report_action(self)
     
     def action_print_receipt_report(self):
         company = self.env['res.company'].browse(self.env.company.id)
