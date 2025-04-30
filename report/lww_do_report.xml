@@ -11,6 +11,7 @@
             file="lww_delivery.lww_do_template"
             print_report_name="'Delivery Order - %s' % (object.name)"
         />
+        <!-- LIMAWIRA NO HEADER -->
         <report
             id="lww_do_report_no_header"
             model="stock.picking"
