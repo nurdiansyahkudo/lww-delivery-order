@@ -12,20 +12,18 @@
                                 <h1 style="font-size: 25px;">
                                     <strong>SURAT PENGIRIMAN BARANG NEW</strong>
                                 </h1>
-                                <div class='row'>
-                                    <div class='col-3'>
-                                        <p style='text-align: center; font-size: 16px;'><strong>NO SPB </strong></p>
-                                    </div>
-                                    <div class='col-9' style='font-size: 16px; border: 1px;'>
-                                        : <span t-esc="(o.name + ' ' + o.no_do) if o.name and o.no_do else (o.name or o.no_do or '')" style="font-size: 15px;"/>
+                                <div class="row">
+                                    <div class="col-12" style="font-size: 16px; border: 1px;">
+                                        <p><strong>NO SPB</strong> :
+                                            <span t-esc="(o.name + ' ' + o.no_do) if o.name and o.no_do else (o.name or o.no_do or '')" style="font-size: 15px;" />
+                                        </p>
                                     </div>
                                 </div>
-                                <div class='row'>
-                                    <div class='col-3'>
-                                        <p style='text-align: center; font-size: 16px;'><strong>Tgl Kirim </strong></p>
-                                    </div>
-                                    <div class='col-9' style='font-size: 16px; border: 1px;'>
-                                        : <span t-esc="(o.scheduled_date or o.date_done).strftime('%d-%b-%y') if (o.scheduled_date or o.date_done) else ''" style="font-size: 15px;"/>
+                                <div class="row">
+                                    <div class="col-12" style="font-size: 16px; border: 1px;">
+                                        <p><strong>Tgl Kirim</strong> :
+                                            <span t-esc="(o.scheduled_date or o.date_done).strftime('%d-%b-%y') if (o.scheduled_date or o.date_done) else ''" style="font-size: 15px;" />
+                                        </p>
                                     </div>
                                 </div>
                             </div>
