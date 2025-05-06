@@ -13,12 +13,18 @@ class StockPicking(models.Model):
         store=True
     )
     sale_id = fields.Many2one('sale.order', compute="_compute_sale_id", inverse="_set_sale_id", string="Sales Order", store=True, index='btree_not_null')
-    project_id = fields.Many2one('project.project', string="Project", required=True)
+    project_id = fields.Many2one('project.project', string="Project")
 
     print_template = fields.Selection([
         ('with_header', 'With Header'),
         ('without_header', 'Without Header'),
     ], string="Print Template", default='with_header', required=True)
+
+    @api.constrains('project_id', 'picking_type_code')
+    def _check_project_required_for_outgoing(self):
+        for rec in self:
+            if rec.picking_type_code == 'outgoing' and not rec.project_id:
+                raise ValidationError("Project is required for Delivery Order.")
 
     @api.onchange('partner_id')
     def _onchange_partner_id(self):
