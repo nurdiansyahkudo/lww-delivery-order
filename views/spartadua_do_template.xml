@@ -7,8 +7,8 @@
                 <t t-foreach="docs" t-as="o">
                     <!-- Header Section -->
                     <div class="row" style="border-bottom: 2px solid rgb(62, 54, 180);">
-                        <div class="col-6" style="height: 130px; display: flex; flex-direction: column; justify-content: center;">
-                            <div class="text" style="font-size: 30px; text-align: left;">
+                        <div class="col-12" style="height: 130px; display: flex; flex-direction: column; justify-content: center;">
+                            <div class="text" style="font-size: 30px; text-align: center;">
                                 <br/>
                                 <h1 style="font-size: 2rem; padding-top: 70px;">
                                     <strong>DELIVERY ORDER</strong>
@@ -16,26 +16,6 @@
                                 <h1 style="font-size: 1.5rem; margin-bottom: 2px;">
                                   No. : <strong><span t-esc="(o.name + ' ' + o.no_do) if o.name and o.no_do else (o.name or o.no_do or '')"/></strong>
                                 </h1>
-                            </div>
-                        </div>
-                        <div class="col-1" style="display: flex; align-items: center; justify-content: space-between;">
-                            <img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % o.company_id.logo.decode()" 
-                                style="max-width: 100px; height: auto; margin-right: 10px;" />
-                        </div>
-                        <div class="col-5" style="display: flex; align-items: center; justify-content: space-between;">
-                            <div style="font-size: 12px; line-height: 1.5; text-align: right; flex: 1;">
-                                <p style="font-weight: bold; margin-bottom: 2px; font-size: 30px; color: blue;"><em>PT. SpartaDua RibuJaya</em></p>
-                                <p>
-                                    <span t-esc="o.company_id.street"/> <br/>
-                                    <span t-esc="o.company_id.city"/> - <span t-esc="o.company_id.zip"/>, 
-                                    <span t-esc="o.company_id.country_id.name"/><br/>
-                                    Phone: <span t-esc="o.company_id.phone"/><br/>
-                                    Fax: <span t-esc="o.company_id.mobile"/>
-                                </p>
-                                <br/>
-                                <strong>
-                                    <span t-esc="(o.scheduled_date or o.date_done).strftime('%d-%b-%Y') if (o.scheduled_date or o.date_done) else ''" style="font-size: 1.5rem;"/>
-                                </strong>
                             </div>
                         </div>
                     </div>
