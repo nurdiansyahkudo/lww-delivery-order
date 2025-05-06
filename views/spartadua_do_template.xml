@@ -6,19 +6,19 @@
             <t t-call="web.external_layout">
                 <t t-foreach="docs" t-as="o">
                     <!-- Header Section -->
-                    <div class="row" style="border-bottom: 2px solid rgb(62, 54, 180);">
+                    <div class="row">
                         <div class="col-12" style="height: 130px; display: flex; flex-direction: column; justify-content: center;">
-                            <div class="text" style="font-size: 30px; text-align: center;">
-                                <br/>
-                                <h1 style="font-size: 2rem; padding-top: 70px;">
+                            <div class="text" style="font-size: 30px; text-align: center; border-bottom: 2px solid rgb(62, 54, 180); padding-bottom: 10px;">
+                                <h1 style="font-size: 2rem; padding-top: 40px; margin-bottom: 10px;">
                                     <strong>DELIVERY ORDER</strong>
                                 </h1>
                                 <h1 style="font-size: 1.5rem; margin-bottom: 2px;">
-                                  No. : <strong><span t-esc="(o.name + ' ' + o.no_do) if o.name and o.no_do else (o.name or o.no_do or '')"/></strong>
+                                    No. : <strong><span t-esc="(o.name + ' ' + o.no_do) if o.name and o.no_do else (o.name or o.no_do or '')"/></strong>
                                 </h1>
                             </div>
                         </div>
                     </div>
+
                     <!-- Main Section -->
                     <main>
                         <div class="page" style="padding: 10px;">
