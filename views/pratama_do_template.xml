@@ -8,8 +8,9 @@
                     <!-- Bagian Header (Logo + Alamat) -->
                     <div style="text-align: center; margin-bottom: 10px;">
                         <!-- Logo Perusahaan -->
-                        <img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % o.company_id.logo" style="max-height: 100px; margin-bottom: 10px;"/>
-                            <!-- Alamat Perusahaan -->
+                        <t t-if="o.company_id.logo">
+                            <img t-att-src="'data:image/png;base64,%s' % o.company_id.logo" style="max-height: 100px; margin-bottom: 10px;" />
+                        </t>                            <!-- Alamat Perusahaan -->
                             <div style="font-size: 12px; line-height: 1.5;">
                                 <p style="font-weight: bold; font-size: 20px; margin: 0;">
                                     <t t-esc="o.company_id.name or ''"/>
