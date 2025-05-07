@@ -51,6 +51,26 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="row" style="margin-bottom: 10px; margin-top: 10px;">
+                                <div class="col-6 text-left">
+                                    <div class='row'>
+                                        <div class='col-3'>
+                                            <p style='text-align: left; font-size: 16px; font-weight: bold;'>No. PO Customer </p>
+                                        </div>
+                                        <div class='col-9' style='font-size: 16px; border: 1px;'>
+                                            :   <span t-esc="o.origin or ''"/>
+                                        </div>
+                                    </div>
+                                    <div class='row'>
+                                        <div class='col-3'>
+                                            <p style='text-align: left; font-size: 16px; font-weight: bold;'>Tgl. PO Customer </p>
+                                        </div>
+                                        <div class='col-9' style='font-size: 16px; border: 1px;'>
+                                            :     <span t-esc="(o.scheduled_date or o.date_done).strftime('%d-%b-%y') if (o.scheduled_date or o.date_done) else ''" style="font-size: 15px;" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <!-- Reference and Date Section -->
                             <div class="row" style="margin-bottom: 5px; margin-top: 10px; border-bottom: 2px solid rgb(0, 0, 0)">
                                 <table class="table table-sm" style="margin-bottom: 5px; border: 0.5px;">
