@@ -63,10 +63,7 @@
                                     </div>
                                     <div class='row'>
                                         <div class='col-6'>
-                                            <p style='text-align: left; font-size: 16px;'>Tgl. PO Customer   : </p>
-                                        </div>
-                                        <div class='col-6' style='font-size: 16px;'>
-                                            <span t-esc="(o.scheduled_date or o.date_done).strftime('%d-%b-%y') if (o.scheduled_date or o.date_done) else ''" style="font-size: 15px;" />
+                                            <p style='text-align: left; font-size: 16px;'>Tgl. PO Customer   : </p> <span t-esc="(o.scheduled_date or o.date_done).strftime('%d-%b-%y') if (o.scheduled_date or o.date_done) else ''" style="font-size: 15px;" />
                                         </div>
                                     </div>
                                 </div>
