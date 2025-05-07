@@ -5,11 +5,8 @@
         <template id="pratama_do_template">
             <t t-call="web.external_layout">
                 <t t-foreach="docs" t-as="o">
-                    <!-- Bagian Header (Logo + Alamat) -->
                     <div style="text-align: center; margin-bottom: 10px;">
-                        <!-- Logo Perusahaan -->
                         <img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % o.company_id.logo" style="max-height: 100px; margin-bottom: 10px;"/>
-                            <!-- Alamat Perusahaan -->
                             <div style="font-size: 12px; line-height: 1.5;">
                                 <p style="font-weight: bold; font-size: 20px; margin: 0;">
                                     <t t-esc="o.company_id.name or ''"/>
@@ -21,9 +18,7 @@
                                 </p>
                             </div>
                         </div>
-                        <!-- Garis hitam pembatas -->
                         <div style="border-bottom: 2px solid black; margin: 10px 0;"></div>
-                        <!-- Bagian Judul DELIVERY ORDER dan nomor DO -->
                         <div style="text-align: center; padding-top: 10px;">
                             <h1 style="font-size: 2rem; margin: 0;"><strong>SURAT JALAN</strong></h1>
                             <h2 style="font-size: 1.5rem; margin: 5px 0;">
