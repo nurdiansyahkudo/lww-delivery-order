@@ -21,11 +21,9 @@
 
                     <div class="row" style="border-bottom: 3px solid rgb(0, 0, 0);"></div>
                         <div style="text-align: center; padding-top: 10px;">
-                            <h1 style="font-size: 30px; margin: 0;">SURAT JALAN</h1>
+                            <h1 style="font-size: 35px; margin: 0;">SURAT JALAN</h1>
                             <h2 style="font-size: 20px; margin: 5px 0;">
-                                <strong>
                                     No. : <t t-esc="(o.name + ' ' + o.no_do) if o.name and o.no_do else (o.name or o.no_do or '')"/>
-                                </strong>
                             </h2>
                         </div>
 
