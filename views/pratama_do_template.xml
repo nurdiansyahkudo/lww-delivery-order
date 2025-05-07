@@ -5,7 +5,6 @@
         <template id="pratama_do_template">
             <t t-call="web.external_layout">
                 <t t-foreach="docs" t-as="o">
-                    <div class="row" style="border-bottom: 3px solid rgb(0, 0, 0);"></div>
                         <div style="text-align: center; padding-top: 10px;">
                             <h1 style="font-size: 35px; margin: 0;">SURAT JALAN</h1>
                             <h2 style="font-size: 20px; margin: 5px 0;">
