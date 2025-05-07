@@ -71,42 +71,15 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Reference and Date Section -->
-                            <div class="row" style="margin-bottom: 5px; margin-top: 10px;">
-                                <table class="table table-sm" style="margin-bottom: 5px; border: 0.5px;">
-                                    <thead style="border: 0.5px; background-color: #efefef">
-                                        <tr>
-                                            <th style="font-size: 16px; text-align: center;">OUR REF NO</th>
-                                            <!-- <th style="font-size: 16px; text-align: center;">DATE</th> -->
-                                            <th style="font-size: 16px; text-align: center;">PRJ/PO NO</th>
-                                            <th style="font-size: 16px; text-align: center;">SPK/PO CUSTOMER</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                        <!-- Our Ref No -->
-                                            <td class="text-center" style="font-size: 15px;">
-                                                <span t-esc="o.sale_id.name or ''" style="font-size: 15px;"/>
-                                            </td>
-                                        <!-- PRJ/PO NO -->
-                                            <td class="text-center" style="font-size: 15px;"><span t-esc="o.project_id.name or ''" style="font-size: 15px;"/></td>
-                                        <!-- SPK/PO CUSTOMER -->
-                                            <td class="text-center" style="font-size: 15px;"><span t-esc="o.origin or ''" style="font-size: 15px;"/></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
                             <!-- Table Product -->
                             <div class="row" style="margin-bottom: 5px; margin-top: 10px;">
                                 <table class="table table-sm" style="margin-bottom: 5px; border: 0.5px;">
                                     <thead style="border: 0.5px;">
                                         <tr>
-                                            <th style="font-size: 16px; text-align: center; font-weight: bold;">No.</th>
-                                            <th style="font-size: 16px; text-align: center; font-weight: bold;">Serial Number</th>
-                                            <th style="font-size: 16px; text-align: center; font-weight: bold;">Part Number</th>
-                                            <th style="font-size: 16px; text-align: center; font-weight: bold;">Product Name</th>
-                                            <th style="font-size: 16px; text-align: center; font-weight: bold;">Qty</th>
-                                            <th style="font-size: 16px; text-align: center; font-weight: bold;">Unit</th>
+                                            <th style="font-size: 16px; text-align: center; font-weight: bold;">NO</th>
+                                            <th style="font-size: 16px; text-align: center; font-weight: bold;">NAMA BARANG</th>
+                                            <th style="font-size: 16px; text-align: center; font-weight: bold;">QTY</th>
+                                            <th style="font-size: 16px; text-align: center; font-weight: bold;">SATUAN</th>
                                         </tr>
                                     </thead>
                                     <tbody style="border: none;">
@@ -116,10 +89,6 @@
                                             <tr>
                                             <!-- No -->
                                                 <td class="text-center" style="font-weight: bold;"><span t-esc="counter" style="font-weight: bold; text-align: center;"/></td>
-                                            <!-- Serial Number -->
-                                                <td class="text-center" style="font-size: 15px;"><span t-esc="', '.join(line.lot_ids.mapped('name')) or ''" style="font-size: 15px;"/></td>
-                                            <!-- Part Number -->
-                                                <td class="text-center" style="font-size: 15px;"><span t-esc="line.product_id.default_code or ''" style="font-size: 15px;"/></td>
                                             <!-- Product Name -->
                                                 <td class="text-center" style="font-size: 15px;"><span t-esc="line.product_id.name or ''" style="font-size: 15px;"/></td>
                                             <!-- QTY -->
