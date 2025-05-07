@@ -44,6 +44,17 @@
             print_report_name="'Delivery Order - %s' % (object.name)"
         />
 
+        <!-- PRATAMA DATAMAKSIMA -->
+        <report
+            id="pratama_do_report"
+            model="stock.picking"
+            string="Delivery Order"
+            report_type="qweb-pdf"
+            name="lww_delivery.pratama_do_template"
+            file="lww_delivery.pratama_do_template"
+            print_report_name="'Delivery Order - %s' % (object.name)"
+        />
+
         <!-- PAPERFORMAT POTRAIT -->
         <record id="paperformat_portrait" model="report.paperformat">
             <field name="name">Potrait Format</field>
@@ -119,6 +130,20 @@
             <field name="model">stock.picking</field>
             <field name="report_name">lww_delivery.spartadua_do_template</field>
             <field name="report_file">lww_delivery.spartadua_do_template</field>
+            <field name="print_report_name">(object.get_print_report_name())</field>
+            <field name="attachment"/>
+            <field name="report_type">qweb-pdf</field>
+            <field name="binding_model_id" ref="stock.model_stock_picking"/>
+            <field name="binding_type">report</field>
+            <field name="paperformat_id" ref="lww_delivery.paperformat_portrait"/>
+        </record>
+
+        <!-- PRATAMA DATAMAKSIMA -->
+        <record id="action_report_pratama_do" model="ir.actions.report">
+            <field name="name">Print DO Pratama</field>
+            <field name="model">stock.picking</field>
+            <field name="report_name">lww_delivery.pratama_do_template</field>
+            <field name="report_file">lww_delivery.pratama_do_template</field>
             <field name="print_report_name">(object.get_print_report_name())</field>
             <field name="attachment"/>
             <field name="report_type">qweb-pdf</field>

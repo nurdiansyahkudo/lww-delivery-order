@@ -18,6 +18,7 @@
         'views/lww_do_template.xml',
         'views/bs_do_template.xml',
         'views/spartadua_do_template.xml',
+        'views/pratama_do_template.xml',
 
         # DELIVERY ORDER NO HEADER
         'views/lww_do_template_no_header.xml',
