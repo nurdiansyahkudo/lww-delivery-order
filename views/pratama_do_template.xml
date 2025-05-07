@@ -5,35 +5,32 @@
         <template id="pratama_do_template">
             <t t-call="web.external_layout">
                 <t t-foreach="docs" t-as="o">
-                    <!-- Header Section -->
-                    <div class="row" style="border-bottom: 2px solid rgb(0, 0, 0);">
-                        <div class="col-6" style="height: 150px; display: flex; flex-direction: column; justify-content: center;">
-                            <div class="text" style="font-size: 30px; text-align: left;">
-                                <div class="row">
-                                    <h1 style="font-size: 2rem;">
-                                        <strong>DELIVERY ORDER</strong>
-                                    </h1>
-                                </div>
-                                <div class="row">
-                                    <h1 style="font-size: 1.5rem;">
-                                        <strong>
-                                            <span t-esc="(o.name + ' ' + o.no_do) if o.name and o.no_do else (o.name or o.no_do or '')"/>
-                                        </strong>
-                                    </h1>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div style="font-size: 12px; line-height: 1.5; text-align: center;">
-                                <p style="font-weight: bold; margin-bottom: 2px; font-size: 30px;"><em><span t-esc="o.company_id.name or ''" style="font-weight: bold;"/></em></p>
-                                <p>
-                                    <span t-esc="o.company_id.street"/> <br/>
-                                    <span t-esc="o.company_id.city"/> - <span t-esc="o.company_id.zip"/>, 
-                                    <span t-esc="o.company_id.country_id.name"/><br/>
-                                    Phone: <span t-esc="o.company_id.phone"/><br/>
-                                    Fax: <span t-esc="o.company_id.mobile"/>
+                    <!-- Bagian Header (Logo + Alamat) -->
+                    <div style="text-align: center; margin-bottom: 10px;">
+                        <!-- Logo Perusahaan -->
+                        <img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % o.company_id.logo" style="max-height: 100px; margin-bottom: 10px;"/>
+                            <!-- Alamat Perusahaan -->
+                            <div style="font-size: 12px; line-height: 1.5;">
+                                <p style="font-weight: bold; font-size: 20px; margin: 0;">
+                                    <t t-esc="o.company_id.name or ''"/>
+                                </p>
+                                <p style="margin: 0;">
+                                    <t t-esc="o.company_id.street"/><br/>
+                                    <t t-esc="o.company_id.street2"/> <t t-esc="o.company_id.city"/><br/>
+                                    Telp. <t t-esc="o.company_id.phone"/> Fax. <t t-esc="o.company_id.mobile"/>
                                 </p>
                             </div>
+                        </div>
+                        <!-- Garis hitam pembatas -->
+                        <div style="border-bottom: 2px solid black; margin: 10px 0;"></div>
+                        <!-- Bagian Judul DELIVERY ORDER dan nomor DO -->
+                        <div style="text-align: center; padding-top: 10px;">
+                            <h1 style="font-size: 2rem; margin: 0;"><strong>SURAT JALAN</strong></h1>
+                            <h2 style="font-size: 1.5rem; margin: 5px 0;">
+                                <strong>
+                                    No. : <t t-esc="(o.name + ' ' + o.no_do) if o.name and o.no_do else (o.name or o.no_do or '')"/>
+                                </strong>
+                            </h2>
                         </div>
                     </div>
                     <!-- Main Section -->
