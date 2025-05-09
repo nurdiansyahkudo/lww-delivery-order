@@ -120,17 +120,7 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-4 text-center" style="margin-bottom: 5px;">
-                                            <p>Penerima,</p>
-                                            <p style="margin-top: 60px;">
-                                                ( <span style="display: inline-block; min-width: 150px; border-bottom: 1px solid black;"></span> )
-                                            </p>
-                                        </div>
-                                        <div class="col-4 text-center" style="margin-bottom: 5px;">
-                                            <p>Pengirim,</p>
-                                            <p style="margin-top: 60px;">
-                                                ( <span style="display: inline-block; min-width: 150px; border-bottom: 1px solid black;"></span> )
-                                            </p>
+                                        <div class="col-8">
                                         </div>
                                         <div class="col-4 text-center" style="margin-bottom: 5px;">
                                             <p>Petugas Gudang,</p>
