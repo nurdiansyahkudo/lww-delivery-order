@@ -11,7 +11,7 @@
                              <div class="text" style="font-size: 30px; text-align: left;">
                                  <br/>
                                  <h1 style="font-size: 2rem; padding-top: 70px;">
-                                     <strong>DELIVERY ORDER</strong>
+                                     <strong>RECEIVED GOODS</strong>
                                  </h1>
                                  <h1 style="font-size: 1.5rem; margin-bottom: 2px;">
                                    No. : <strong><span t-esc="(o.name + ' ' + o.no_do) if o.name and o.no_do else (o.name or o.no_do or '')"/></strong>
@@ -34,7 +34,7 @@
                                  </p>
                                  <br/>
                                  <strong>
-                                     <span t-esc="(o.scheduled_date or o.date_done).strftime('%d-%b-%Y') if (o.scheduled_date or o.date_done) else ''" style="font-size: 1.5rem;"/>
+                                     Date : <span t-esc="(o.scheduled_date or o.date_done).strftime('%d-%b-%Y') if (o.scheduled_date or o.date_done) else ''" style="font-size: 1.5rem;"/>
                                  </strong>
                              </div>
                          </div>
@@ -47,7 +47,7 @@
                                  <div class="col-6 text-left">
                                      <div class='row' style="border-style: solid; border: 1.5px rgb(62, 54, 180);">
                                          <div class='col-3'>
-                                             <strong><p style='text-align: left; font-size: 16px;'>Customer </p></strong>
+                                             <strong><p style='text-align: left; font-size: 16px;'>Supplier </p></strong>
                                          </div>
                                          <div class='col-9' style='font-size: 16px; border: 1px;'>
                                              :   <span t-esc='o.sale_id.partner_id.name'/>
@@ -55,7 +55,7 @@
                                      </div>
                                      <div class='row' style="border-style: solid; border: 1.5px rgb(62, 54, 180);">
                                          <div class='col-3'>
-                                             <strong><p style='text-align: left; font-size: 16px;'>Send To </p></strong>
+                                             <strong><p style='text-align: left; font-size: 16px;'>Warehouse </p></strong>
                                          </div>
                                          <div class='col-9' style='font-size: 16px; border: 1px;'>
                                              :   <span t-esc='o.partner_id.name'/>
@@ -149,13 +149,23 @@
                              <div style="page-break-after:auto;">
                                  <!-- Note Section -->
                                  <div class="row" style="margin-bottom: 10px; margin-top: 10px;">
+                                    <div class="col-12">
+                                        <table style="width: 100%; border-collapse: collapse; font-size: 16px;">
+                                            <tr>
+                                                <td style="width: 10%; font-weight: bold; vertical-align: top;">NOTE:</td>
+                                                    <td style="border: 1px solid #000; padding: 5px;">
+                                                    <span t-esc="o.note or ''"/>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                 <div class="row" style="margin-bottom: 10px; margin-top: 10px;">
                                      <div class="col-6 text-left">
                                          <div class='row'>
-                                             <div class='col-3'>
-                                                 <p style='font-size: 16px;'>NOTE : </p>
-                                             </div>
-                                             <div class='col-9' style='font-size: 16px; border: 1px;'>
-                                                 <span t-esc="o.note or ''"/>
+                                             <div class='col-12'>
+                                                 <p style='font-size: 16px;'>Goods have been received with good condition and enough.</p>
                                              </div>
                                          </div>
                                      </div>
@@ -163,13 +173,7 @@
                                  <!-- Signature Section -->
                                  <div style="page-break-after: auto;">
                                      <div class="row">
-                                         <div class="col-4 text-center" style="margin-bottom: 5px;">
-                                             <p>Customer</p>
-                                             <p style="margin-top: 60px;">( ___________________ )</p>
-                                         </div>
-                                         <div class="col-4 text-center" style="margin-bottom: 5px;">
-                                             <p>Sender</p>
-                                             <p style="margin-top: 60px;">( ___________________ )</p>
+                                         <div class="col-8">
                                          </div>
                                          <div class="col-4 text-center" style="margin-bottom: 5px;">
                                              <p>Warehouse Keeper</p>
