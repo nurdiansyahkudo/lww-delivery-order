@@ -33,8 +33,8 @@
                                      Fax: <span t-esc="o.company_id.mobile"/>
                                  </p>
                                  <br/>
-                                 <strong>
-                                     Date : <span t-esc="(o.scheduled_date or o.date_done).strftime('%d-%b-%Y') if (o.scheduled_date or o.date_done) else ''" style="font-size: 1.5rem;"/>
+                                 <strong style="font-size: 1.5rem;">
+                                     Date : <span t-esc="(o.scheduled_date or o.date_done).strftime('%d-%b-%Y') if (o.scheduled_date or o.date_done) else ''"/>
                                  </strong>
                              </div>
                          </div>
