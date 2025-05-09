@@ -5,6 +5,7 @@
         <template id="pratama_receipt_template">
             <t t-call="web.external_layout">
                 <t t-foreach="docs" t-as="o">
+                    <!-- Header Section -->
                     <div style="text-align: center; margin-bottom: 10px;">
                         <img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % o.company_id.logo" style="max-height: 100px; margin-bottom: 10px;"/>
                         <p style="font-weight: bold; font-size: 45px; margin: 0;">
@@ -18,7 +19,6 @@
                            </p>
                         </div>
                     </div>
-
                     <div class="row" style="border-bottom: 3px solid rgb(0, 0, 0);"></div>
                         <div style="text-align: center; padding-top: 10px;">
                             <h1 style="font-size: 35px; margin: 0;">TANDA MASUK BARANG</h1>
