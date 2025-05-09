@@ -34,10 +34,8 @@
                             <div class="row">
                                 <div class="col-6 text-left">
                                     <div class='row'>
-                                        <div class='col-3'>
+                                        <div class='col-12'>
                                             <p style='text-align: left; font-size: 16px; font-weight: bold;'>Telah Terima Barang dari :</p>
-                                        </div>
-                                        <div class='col-9' style='font-size: 16px; border: 1px;'>
                                         </div>
                                     </div>
                                     <div class='row'>
@@ -45,9 +43,6 @@
                                         <div class='col-9' style='font-size: 16px; border: 1px;'>
                                             <span t-esc="(o.partner_id.parent_id.name or o.partner_id.name) if (o.partner_id.parent_id.name or o.partner_id.name) else ''"/><br/>
                                             <span t-esc="(o.partner_id.parent_id.street or o.partner_id.street) if (o.partner_id.parent_id.street or o.partner_id.street) else ''"/>
-                                            <br/>
-                                            <span t-esc="o.partner_id.parent_id.name or o.partner_id.name"/><br/>
-                                            <span t-esc="o.partner_id.parent_id.street or o.partner_id.street"/>
                                         </div>
                                     </div>
                                 </div>
