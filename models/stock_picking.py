@@ -33,12 +33,16 @@ class StockPicking(models.Model):
             'value': {'project_id': False},
         }
     
-    @api.depends('group_id', 'project_id.reinvoiced_sale_order_id')
+    @api.depends('group_id', 'project_id')
     def _compute_sale_id(self):
         for picking in self:
             if picking.group_id and picking.group_id.sale_id:
                 picking.sale_id = picking.group_id.sale_id
-            elif picking.project_id and picking.project_id.reinvoiced_sale_order_id:
+            elif (
+                picking.project_id
+                and hasattr(picking.project_id, 'reinvoiced_sale_order_id')
+                and picking.project_id.reinvoiced_sale_order_id
+            ):
                 picking.sale_id = picking.project_id.reinvoiced_sale_order_id
             else:
                 picking.sale_id = False
