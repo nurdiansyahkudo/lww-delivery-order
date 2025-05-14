@@ -32,6 +32,16 @@ class StockPicking(models.Model):
             'domain': {'project_id': [('partner_id', '=', self.partner_id.id)]},
             'value': {'project_id': False},
         }
+    
+    @api.depends('project_id')
+    def _compute_sale_id(self):
+        for record in self:
+            record.sale_id = record.project_id.sale_id
+
+    def _set_sale_id(self):
+        for record in self:
+            if record.project_id and record.sale_id:
+                record.project_id.sale_id = record.sale_id
 
     # print DO with header
     def action_print_report(self):
