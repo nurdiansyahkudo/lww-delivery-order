@@ -5,7 +5,7 @@
     'author': '',
     'category': 'Uncategorized',
     'version': '1.0',
-    'depends': ['base', 'stock'],
+    'depends': ['base', 'stock', 'sale_stock', 'project'],
     'data': [
         # RECEIPT GOODS
         'report/lww_receipt_report.xml',
