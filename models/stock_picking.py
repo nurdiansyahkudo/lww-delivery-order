@@ -33,29 +33,36 @@ class StockPicking(models.Model):
             'value': {'project_id': False},
         }
     
-    @api.depends('group_id', 'project_id')
-    def _compute_sale_id(self):
-        for picking in self:
-            if picking.project_id and picking.project_id.sale_id:
-                picking.sale_id = picking.project_id.sale_id
-            elif picking.group_id and picking.group_id.sale_id:
-                picking.sale_id = picking.group_id.sale_id
-            else:
-                picking.sale_id = False
+    @api.onchange('project_id')
+    def _onchange_partner_id(self):
+        return {
+            'domain': {'sale_id': [('project_id', '=', self.project_id.id)]},
+            'value': {'sale_id': False},
+        }
+    
+    # @api.depends('group_id', 'project_id')
+    # def _compute_sale_id(self):
+    #     for picking in self:
+    #         if picking.project_id and picking.project_id.sale_id:
+    #             picking.sale_id = picking.project_id.sale_id
+    #         elif picking.group_id and picking.group_id.sale_id:
+    #             picking.sale_id = picking.group_id.sale_id
+    #         else:
+    #             picking.sale_id = False
 
-    def _set_sale_id(self):
-        for picking in self:
-            if picking.group_id:
-                picking.group_id.sale_id = picking.sale_id
-            else:
-                vals = {}
-                if picking.sale_id:
-                    vals = {
-                        'sale_id': picking.sale_id.id,
-                        'name': picking.sale_id.name,
-                    }
-                pg = self.env['procurement.group'].create(vals)
-                picking.group_id = pg
+    # def _set_sale_id(self):
+    #     for picking in self:
+    #         if picking.group_id:
+    #             picking.group_id.sale_id = picking.sale_id
+    #         else:
+    #             vals = {}
+    #             if picking.sale_id:
+    #                 vals = {
+    #                     'sale_id': picking.sale_id.id,
+    #                     'name': picking.sale_id.name,
+    #                 }
+    #             pg = self.env['procurement.group'].create(vals)
+    #             picking.group_id = pg
 
     # print DO with header
     def action_print_report(self):
