@@ -66,6 +66,17 @@
             print_report_name="'Delivery Order - %s' % (object.name)"
         />
 
+        <!-- IMADEA MAGKASAMA  -->
+        <report
+            id="imadea_do_report"
+            model="stock.picking"
+            string="Delivery Order"
+            report_type="qweb-pdf"
+            name="lww_delivery.imadea_do_template"
+            file="lww_delivery.imadea_do_template"
+            print_report_name="'Delivery Order - %s' % (object.name)"
+        />
+
         <!-- PAPERFORMAT POTRAIT -->
         <record id="paperformat_portrait" model="report.paperformat">
             <field name="name">Potrait Format</field>
@@ -169,6 +180,20 @@
             <field name="model">stock.picking</field>
             <field name="report_name">lww_delivery.amanera_do_template</field>
             <field name="report_file">lww_delivery.amanera_do_template</field>
+            <field name="print_report_name">(object.get_print_report_name())</field>
+            <field name="attachment"/>
+            <field name="report_type">qweb-pdf</field>
+            <field name="binding_model_id" ref="stock.model_stock_picking"/>
+            <field name="binding_type">report</field>
+            <field name="paperformat_id" ref="lww_delivery.paperformat_portrait"/>
+        </record>
+
+        <!-- IMADEA MAGKASAMA -->
+        <record id="action_report_imadea_do" model="ir.actions.report">
+            <field name="name">Print DO Imadea</field>
+            <field name="model">stock.picking</field>
+            <field name="report_name">lww_delivery.imadea_do_template</field>
+            <field name="report_file">lww_delivery.imadea_do_template</field>
             <field name="print_report_name">(object.get_print_report_name())</field>
             <field name="attachment"/>
             <field name="report_type">qweb-pdf</field>
