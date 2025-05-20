@@ -29,28 +29,22 @@
                             </div>
                         </div>
                     </div>
+                    <!-- NO and Date Section -->
                     <div class="row">
-                        <!-- Reference and Date Section -->
-                        <div class="row" style="margin-bottom: 5px; margin-top: 10px; border-bottom: 2px solid rgb(0, 0, 0)">
+                        <div class="row" style="margin-bottom: 5px; margin-top: 10px;">
                             <table class="table table-sm" style="margin-bottom: 5px; border: 0.5px;">
                                 <thead style="border: 0.5px; background-color: #efefef">
                                     <tr>
-                                        <th style="font-size: 16px; text-align: center;">OUR REF NO</th>
-                                        <!-- <th style="font-size: 16px; text-align: center;">DATE</th> -->
-                                        <th style="font-size: 16px; text-align: center;">PRJ/PO NO</th>
-                                        <th style="font-size: 16px; text-align: center;">SPK/PO CUSTOMER</th>
+                                        <th style="font-size: 16px; text-align: center;">NO</th>
+                                        <th style="font-size: 16px; text-align: center;">DATE</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <!-- Our Ref No -->
-                                        <td class="text-center" style="font-size: 15px;">
-                                            <span t-esc="o.sale_id.name or ''" style="font-size: 15px;"/>
-                                        </td>
-                                        <!-- PRJ/PO NO -->
+                                        <!-- NO -->
                                         <td class="text-center" style="font-size: 15px;"><span t-esc="o.project_id.name or ''" style="font-size: 15px;"/></td>
-                                        <!-- SPK/PO CUSTOMER -->
-                                        <td class="text-center" style="font-size: 15px;"><span t-esc="o.origin or ''" style="font-size: 15px;"/></td>
+                                        <!-- DATE -->
+                                        <td class="text-center" style="font-size: 15px;"><span t-esc="(o.scheduled_date or o.date_done).strftime('%d-%b-%Y') if (o.scheduled_date or o.date_done) else ''" style="font-size: 15px;"/></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -60,7 +54,7 @@
                     <main>
                         <div class="page" style="padding: 10px;">
                             <!-- Address Section -->
-                            <div class="row" style="margin-bottom: 5px; margin-top: 10px; border-bottom: 2px solid rgb(0, 0, 0)">
+                            <div class="row" style="margin-bottom: 5px; margin-top: 10px;">
                                 <div class="col-6 text-left">
                                     <strong style="font-size: 16px;">Sold To: </strong>
                                     <div class='row'>
@@ -178,6 +172,31 @@
                                             : <span t-esc='o.partner_id.mobile'/>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                            <!-- NP and REF Section -->                     
+                            <div class="row">
+                                <div class="row" style="margin-bottom: 5px; margin-top: 10px;">
+                                    <table class="table table-sm" style="margin-bottom: 5px; border: 0.5px;">
+                                        <thead style="border: 0.5px; background-color: #efefef">
+                                            <tr>
+                                                <th style="font-size: 16px; text-align: center;">NP</th>
+                                                <th style="font-size: 16px; text-align: center;">REF</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <!-- NP -->
+                                                <td class="text-center" style="font-size: 15px;">
+                                                    <span t-esc="o.sale_id.name or ''" style="font-size: 15px;"/>
+                                                </td>
+                                                <!-- Our Ref No -->
+                                                <td class="text-center" style="font-size: 15px;">
+                                                    <span t-esc="o.sale_id.name or ''" style="font-size: 15px;"/>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <!-- Table Product -->
