@@ -31,22 +31,18 @@
                     </div>
                     <!-- NO and Date Section -->
                     <div class="row">
-                        <div class="row" style="margin-bottom: 5px; margin-top: 10px;">
-                            <table class="table table-sm" style="margin-bottom: 5px; border: 0.5px;">
-                                <thead style="border: 0.5px; background-color: #efefef">
-                                    <tr>
-                                        <th style="font-size: 16px; text-align: center;">NO</th>
-                                        <th style="font-size: 16px; text-align: center;">DATE</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <!-- NO -->
-                                        <td class="text-center" style="font-size: 15px;"><span t-esc="o.project_id.name or ''" style="font-size: 15px;"/></td>
-                                        <!-- DATE -->
-                                        <td class="text-center" style="font-size: 15px;"><span t-esc="(o.scheduled_date or o.date_done).strftime('%d-%b-%Y') if (o.scheduled_date or o.date_done) else ''" style="font-size: 15px;"/></td>
-                                    </tr>
-                                </tbody>
+                        <div class="row" style="margin-top: 10px; margin-bottom: 5px;">
+                            <table class="table table-sm" style="margin-bottom: 5px; border: 1px solid black; width: 100%;">
+                                <tr style="background-color: #efefef;">
+                                    <th style="font-size: 16px; text-align: center;">NO</th>
+                                        <td class="text-center" style="font-size: 15px;">
+                                            <span t-esc="o.project_id.name or ''"/>
+                                        </td>
+                                    <th style="font-size: 16px; text-align: center;">DATE</th>
+                                        <td class="text-center" style="font-size: 15px;">
+                                            <span t-esc="o.date or ''"/>
+                                        </td>
+                                </tr>
                             </table>
                         </div>
                     </div>
