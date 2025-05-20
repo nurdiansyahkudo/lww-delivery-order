@@ -57,7 +57,7 @@
                         <div class="page" style="padding: 10px;">
                             <!-- Address Section -->
                             <div class="row" style="margin-bottom: 5px; margin-top: 10px;">
-                                <div class="col-6 text-left">
+                                <div class="col-6 text-left"  style="margin-right: 5px;">
                                     <strong style="font-size: 16px;">PEMBELI </strong>
                                     <div class='row'>
                                         <div class='col-12' style='text-align: left; font-size: 16px; border: 1px;'>
@@ -67,7 +67,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-6 text-right" style="margin-left: 1rem; ">
+                                <div class="col-6 text-right" style="margin-left: 5px;">
                                     <strong style="font-size: 16px;">Delivery To: </strong>
                                     <div class='row'>
                                         <div class='col-3'>
@@ -129,26 +129,24 @@
                             </div>
                             <!-- NP and REF Section -->                     
                             <div class="row">
-                                <div class="row" style="margin-bottom: 5px; margin-top: 10px;">
-                                    <table class="table table-sm" style="margin-bottom: 5px; border: 0.5px;">
-                                        <thead style="border: 0.5px; background-color: #efefef">
-                                            <tr>
-                                                <th style="font-size: 16px; text-align: center;">NP</th>
-                                                <th style="font-size: 16px; text-align: center;">REF</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <!-- NP -->
+                                <div class="col-6" style="margin-top: 10px; margin-bottom: 5px; padding-right: 5px;">   
+                                    <table class="table table-sm" style="margin-bottom: 5px; border: 1px solid black; width: 100%;">
+                                        <tr>
+                                            <th style="font-size: 16px; text-align: center;">NP</th>
                                                 <td class="text-center" style="font-size: 15px;">
-                                                    <span t-esc="o.sale_id.name or ''" style="font-size: 15px;"/>
-                                                </td>
-                                                <!-- Our Ref No -->
+                                                    <span t-esc="o.no_do or ''"/>
+                                               </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="col-6" style="margin-top: 10px; margin-bottom: 5px; padding-left: 5px;">
+                                    <table class="table table-sm" style="margin-bottom: 5px; border: 1px solid black; width: 100%;">
+                                        <tr>
+                                            <th style="font-size: 16px; text-align: center;">REF</th>
                                                 <td class="text-center" style="font-size: 15px;">
-                                                    <span t-esc="o.sale_id.name or ''" style="font-size: 15px;"/>
+                                                    <span t-esc="o.sale_id.origin or ''"/>
                                                 </td>
-                                            </tr>
-                                        </tbody>
+                                        </tr>
                                     </table>
                                 </div>
                             </div>
@@ -188,26 +186,12 @@
                                 </table>
                             </div>
                             <div style="page-break-after:auto;">
-                                <!-- Note Section -->
-                                <div class="row" style="margin-bottom: 10px; margin-top: 10px;">
-                                    <div class="col-6 text-left">
-                                        <div class='row'>
-                                            <div class='col-3'>
-                                                <p style='font-size: 16px;'>NOTE : </p>
-                                            </div>
-                                            <div class='col-9' style='font-size: 16px; border: 1px;'>
-                                                <span t-esc="o.note or ''"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                                 <!-- Signature Section -->
                                 <div style="page-break-after: auto;">
                                     <div class="row" style="margin-top: 120px;">
                                         <div class="col-4 text-center"></div>
                                         <div class="col-4 text-center"></div>
                                         <div class="col-4 text-center">
-                                            <span t-esc="(o.scheduled_date or o.date_done).strftime('%d-%b-%Y') if (o.scheduled_date or o.date_done) else ''" style="font-size: 15px;"/>
                                         </div>
                                     </div>
                                     <div class="row">
