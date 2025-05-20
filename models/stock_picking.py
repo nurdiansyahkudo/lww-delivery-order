@@ -79,6 +79,8 @@ class StockPicking(models.Model):
             return self.env.ref('lww_delivery.action_report_spartadua_do').report_action(self)
         elif company.name == 'PT. PRATAMA DATAMAKSIMA':
             return self.env.ref('lww_delivery.action_report_pratama_do').report_action(self)
+        elif company.name == 'PT. AMANERA BERSAMA ABADI':
+            return self.env.ref('lww_delivery.action_report_amanera_do').report_action(self)
         else:
             # Jika perusahaan tidak cocok dengan ketiganya, menggunakan laporan default
             return self.env.ref('lww_delivery.action_report_limawira_do').report_action(self)
