@@ -144,7 +144,7 @@
                                         <tr>
                                             <th style="font-size: 16px; text-align: center;">REF</th>
                                                 <td class="text-center" style="font-size: 15px;">
-                                                    <span t-esc="o.sale_id.origin or ''"/>
+                                                    <span t-esc="o.no_do or ''"/>
                                                 </td>
                                         </tr>
                                     </table>
@@ -155,12 +155,11 @@
                                 <table class="table table-sm" style="margin-bottom: 5px; border: 0.5px;">
                                     <thead style="border: 0.5px;">
                                         <tr>
-                                            <th style="font-size: 16px; text-align: center; font-weight: bold;">No.</th>
-                                            <th style="font-size: 16px; text-align: center; font-weight: bold;">Serial Number</th>
-                                            <th style="font-size: 16px; text-align: center; font-weight: bold;">Part Number</th>
-                                            <th style="font-size: 16px; text-align: center; font-weight: bold;">Product Name</th>
-                                            <th style="font-size: 16px; text-align: center; font-weight: bold;">Qty</th>
-                                            <th style="font-size: 16px; text-align: center; font-weight: bold;">Unit</th>
+                                            <th style="font-size: 16px; text-align: center; font-weight: bold;">NO</th>
+                                            <th style="font-size: 16px; text-align: center; font-weight: bold;">MODEL</th>
+                                            <th style="font-size: 16px; text-align: center; font-weight: bold;">KETERANGAN BARANG</th>
+                                            <th style="font-size: 16px; text-align: center; font-weight: bold;">JML</th>
+                                            <th style="font-size: 16px; text-align: center; font-weight: bold;">SATUAN</th>
                                         </tr>
                                     </thead>
                                     <tbody style="border: none;">
@@ -170,15 +169,13 @@
                                             <tr>
                                             <!-- No -->
                                                 <td class="text-center" style="font-weight: bold;"><span t-esc="counter" style="font-weight: bold; text-align: center;"/></td>
-                                            <!-- Serial Number -->
-                                                <td class="text-center" style="font-size: 15px;"><span t-esc="', '.join(line.lot_ids.mapped('name')) or ''" style="font-size: 15px;"/></td>
-                                            <!-- Part Number -->
+                                            <!-- MODEL -->
                                                 <td class="text-center" style="font-size: 15px;"><span t-esc="line.product_id.default_code or ''" style="font-size: 15px;"/></td>
-                                            <!-- Product Name -->
+                                            <!-- KETERANGAN BARANG -->
                                                 <td class="text-center" style="font-size: 15px;"><span t-esc="line.product_id.name or ''" style="font-size: 15px;"/></td>
-                                            <!-- QTY -->
+                                            <!-- JUMLAH -->
                                                 <td class="text-center" style="font-size: 15px;"><span t-esc="int(line.quantity) or ''" style="font-size: 15px;"/></td>
-                                            <!-- Unit -->
+                                            <!-- SATUAN -->
                                                 <td class="text-center" style="font-size: 15px;"><span t-esc="line.product_uom.name or ''" style="font-size: 15px;"/></td>
                                             </tr>
                                         </t>
@@ -197,19 +194,19 @@
                                     <div class="row">
                                         <div class="col-4 text-center" style="margin-bottom: 5px;">
                                             <p>RECEIVED BY</p>
-                                            <p style="margin-top: 60px;">
+                                            <p style="margin-top: 80px;">
                                                 ( <span style="display: inline-block; min-width: 150px; border-bottom: 1px solid black;"></span> )
                                             </p>
                                         </div>
                                         <div class="col-4 text-center" style="margin-bottom: 5px;">
                                             <p>SHIPPER</p>
-                                            <p style="margin-top: 60px;">
+                                            <p style="margin-top: 80px;">
                                                 ( <span style="display: inline-block; min-width: 150px; border-bottom: 1px solid black;"></span> )
                                             </p>
                                         </div>
                                         <div class="col-4 text-center" style="margin-bottom: 5px;">
                                             <p>APPROVED BY</p>
-                                            <p style="margin-top: 60px;">
+                                            <p style="margin-top: 80px;">
                                                ( <span t-esc="o.employee_id.name or ''" style="font-size: 16px; min-width: 150px; border-bottom: 1px solid black; display: inline-block;"/> )
                                             </p>
                                         </div>
