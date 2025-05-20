@@ -23,7 +23,7 @@
                             <div class="text-center" style="font-size: 2rem;">
                                 <div class="row">
                                     <h1 style="font-size: 2rem;">
-                                        <strong>DELIVERY ORDER</strong>
+                                        <strong>RECEIVED GOODS</strong>
                                     </h1>
                                 </div>
                             </div>
@@ -58,7 +58,7 @@
                             <!-- Address Section -->
                             <div class="row" style="margin-bottom: 5px; margin-top: 10px;">
                                 <div class="col-6 text-left"  style="margin-right: 5px;">
-                                    <strong style="font-size: 16px;">PEMBELI </strong>
+                                    <strong style="font-size: 16px;">Order From :</strong>
                                     <div class='row'>
                                         <div class='col-12' style='text-align: left; font-size: 16px; border: 1px;'>
                                             <span t-esc="(o.partner_id.parent_id.name or o.partner_id.name) if (o.partner_id.parent_id.name or o.partner_id.name) else ''"/> <br/>
@@ -68,7 +68,7 @@
                                     </div>
                                 </div>
                                 <div class="col-6 text-right" style="margin-left: 5px;">
-                                    <strong style="font-size: 16px;">Delivery To: </strong>
+                                    <strong style="font-size: 16px;">PEMBELI :</strong>
                                     <div class='row'>
                                         <div class='col-12' style='text-align: left; font-size: 16px; border: 1px;'>
                                             <span t-esc='o.partner_id.name'/> <br/>
