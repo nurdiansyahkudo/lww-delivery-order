@@ -8,7 +8,7 @@
                     <!-- Header Section -->
                     <div class="row">
                         <div class="col-6">
-                            <div style="font-size: 13px; line-height: 1.5; text-align: right;">
+                            <div style="font-size: 13px; line-height: 1.5; text-align: left;">
                                 <p style="font-weight: bold; margin-bottom: 2px; font-size: 25px;"><em><span t-esc="o.company_id.name or ''" style="font-weight: bold;"/></em></p>
                                 <p>
                                     <span t-esc="o.company_id.street"/> <br/>
@@ -27,6 +27,33 @@
                                     </h1>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- Reference and Date Section -->
+                        <div class="row" style="margin-bottom: 5px; margin-top: 10px; border-bottom: 2px solid rgb(0, 0, 0)">
+                            <table class="table table-sm" style="margin-bottom: 5px; border: 0.5px;">
+                                <thead style="border: 0.5px; background-color: #efefef">
+                                    <tr>
+                                        <th style="font-size: 16px; text-align: center;">OUR REF NO</th>
+                                        <!-- <th style="font-size: 16px; text-align: center;">DATE</th> -->
+                                        <th style="font-size: 16px; text-align: center;">PRJ/PO NO</th>
+                                        <th style="font-size: 16px; text-align: center;">SPK/PO CUSTOMER</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <!-- Our Ref No -->
+                                        <td class="text-center" style="font-size: 15px;">
+                                            <span t-esc="o.sale_id.name or ''" style="font-size: 15px;"/>
+                                        </td>
+                                        <!-- PRJ/PO NO -->
+                                        <td class="text-center" style="font-size: 15px;"><span t-esc="o.project_id.name or ''" style="font-size: 15px;"/></td>
+                                        <!-- SPK/PO CUSTOMER -->
+                                        <td class="text-center" style="font-size: 15px;"><span t-esc="o.origin or ''" style="font-size: 15px;"/></td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                     <!-- Main Section -->
@@ -152,31 +179,6 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <!-- Reference and Date Section -->
-                            <div class="row" style="margin-bottom: 5px; margin-top: 10px; border-bottom: 2px solid rgb(0, 0, 0)">
-                                <table class="table table-sm" style="margin-bottom: 5px; border: 0.5px;">
-                                    <thead style="border: 0.5px; background-color: #efefef">
-                                        <tr>
-                                            <th style="font-size: 16px; text-align: center;">OUR REF NO</th>
-                                            <!-- <th style="font-size: 16px; text-align: center;">DATE</th> -->
-                                            <th style="font-size: 16px; text-align: center;">PRJ/PO NO</th>
-                                            <th style="font-size: 16px; text-align: center;">SPK/PO CUSTOMER</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                        <!-- Our Ref No -->
-                                            <td class="text-center" style="font-size: 15px;">
-                                                <span t-esc="o.sale_id.name or ''" style="font-size: 15px;"/>
-                                            </td>
-                                        <!-- PRJ/PO NO -->
-                                            <td class="text-center" style="font-size: 15px;"><span t-esc="o.project_id.name or ''" style="font-size: 15px;"/></td>
-                                        <!-- SPK/PO CUSTOMER -->
-                                            <td class="text-center" style="font-size: 15px;"><span t-esc="o.origin or ''" style="font-size: 15px;"/></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
                             </div>
                             <!-- Table Product -->
                             <div class="row" style="margin-bottom: 5px; margin-top: 10px;">
