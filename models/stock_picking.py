@@ -98,7 +98,7 @@ class StockPicking(models.Model):
         elif company.name == 'PT. PRATAMA DATAMAKSIMA':
             return self.env.ref('lww_delivery.action_report_pratama_do_no_header').report_action(self)
         elif company.name == 'PT. IMADEA MAGKASAMA':
-            return self.env.ref('lww_delivery.action_report_pratama_do_no_header').report_action(self)
+            return self.env.ref('lww_delivery.action_report_imadea_do_no_header').report_action(self)
         else:
             return self.env.ref('lww_delivery.action_report_limawira_do_no_header').report_action(self)
     
