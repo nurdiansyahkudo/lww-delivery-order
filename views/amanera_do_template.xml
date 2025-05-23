@@ -2,22 +2,22 @@
 <odoo>
     <data>
         <!-- Template for Kwitansi -->
-        <template id="amanera_do_template">
+        <template id="amanera_receipt_template">
             <t t-call="web.external_layout">
                 <t t-foreach="docs" t-as="o">
                     <!-- Header Section -->
-                    <div class="row" style="border-bottom: 2px solid rgb(21, 0, 104);">
+                    <div class="row" style="border-bottom: 2px solid rgb(0, 0, 0);">
                         <div class="col-6" style="height: 150px; display: flex; flex-direction: column; justify-content: center;">
                             <div class="text" style="font-size: 30px; text-align: left;">
                                 <div class="row">
                                     <h1 style="font-size: 2rem;">
-                                        <strong>SURAT PENGANTAR</strong>
+                                        <strong>SURAT PENERIMAAN</strong>
                                     </h1>
                                 </div>
                                 <div class="row">
                                     <h1 style="font-size: 1.5rem;">
                                         <strong>
-                                            NO. : <span t-esc="(o.name + ' ' + o.no_do) if o.name and o.no_do else (o.name or o.no_do or '')"/>
+                                            <span t-esc="(o.name + ' ' + o.no_do) if o.name and o.no_do else (o.name or o.no_do or '')"/>
                                         </strong>
                                     </h1>
                                 </div>
@@ -45,29 +45,29 @@
                         <div class="page" style="padding: 10px;">
                             <!-- Address Section -->
                             <div class="row" style="margin-bottom: 5px; margin-top: 10px; border-bottom: 2px solid rgb(0, 0, 0)">
-                                <div class='row'>
-                                        <div class='col-3'>
-                                            <p style='text-align: left; font-size: 16px;'>Customer </p>
-                                        </div>
-                                        <div class='col-9' style='font-size: 16px; border: 1px;'>
-                                            :   <span t-esc="(o.partner_id.parent_id.name or o.partner_id.name) if (o.partner_id.parent_id.name or o.partner_id.name) else ''"/>
-                                        </div>
-                                    </div>
-                                    <div class='row'>
-                                        <div class='col-3'>
-                                            <p style='text-align: left; font-size: 16px;'>Alamat Kirim </p>
-                                        </div>
-                                        <div class='col-9' style='font-size: 16px; border: 1px;'>
-                                            :   <span t-esc="(o.partner_id.parent_id.street or o.partner_id.street) if (o.partner_id.parent_id.street or o.partner_id.street) else ''"/>
-                                                <span t-esc="(o.partner_id.parent_id.city or o.partner_id.city) if (o.partner_id.parent_id.city or o.partner_id.city) else ''"/>
-                                                <span t-esc="(o.partner_id.parent_id.state_id.name or o.partner_id.state_id.name) if (o.partner_id.parent_id.state_id.name or o.partner_id.state_id.name) else ''"/>
-                                                <span t-esc="(o.partner_id.parent_id.country_id.name or o.partner_id.country_id.name) if (o.partner_id.parent_id.country_id.name or o.partner_id.country_id.name) else ''"/> <br/>
-                                                Telp. <span t-esc="(o.partner_id.parent_id.phone or o.partner_id.phone) if (o.partner_id.parent_id.phone or o.partner_id.phone) else ''"/>
-                                        </div>
-                                    </div>
+                                <div class="col-6 text-left">
+                                    <table style="border-collapse: collapse; width: 100%; font-size: 14px;">
+                                    <tr>
+                                        <td style="border: 1px solid black; font-weight: bold; width: 20%;">Customer</td>
+                                        <td style="border: 1px solid black;">
+                                            <span t-esc="(o.partner_id.parent_id.name or o.partner_id.name) if (o.partner_id.parent_id.name or o.partner_id.name) else ''"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 1px solid black; font-weight: bold;">Alamat Kirim</td>
+                                        <td style="border: 1px solid black;">
+                                            <strong><span t-esc="o.partner_shipping_id.name or ''"/></strong><br/>
+                                            <span t-esc="o.partner_shipping_id.street or ''"/><br/>
+                                            <span t-esc="o.partner_shipping_id.street2 or ''"/><br/>
+                                            <span t-esc="o.partner_shipping_id.city or ''"/> <span t-esc="o.partner_shipping_id.zip or ''"/><br/>
+                                            Telp. : <span t-esc="o.partner_shipping_id.phone or ''"/><br/>
+                                            Attn : <span t-esc="o.partner_shipping_id.function or ''"/>
+                                        </td>
+                                    </tr>
+                                </table>
                                 </div>
                                 <div class="col-6 text-right" style="margin-left: 1rem; ">
-                                    <strong style="font-size: 16px;">Referensi Kami: </strong>
+                                    <strong style="font-size: 16px;">Delivery To: </strong>
                                     <div class='row'>
                                         <div class='col-3'>
                                             <p style='text-align: left; font-size: 16px;'>Name </p>
@@ -205,7 +205,9 @@
                                     <div class="row" style="margin-top: 120px;">
                                         <div class="col-4 text-center"></div>
                                         <div class="col-4 text-center"></div>
-                                        <div class="col-4 text-center">                                        </div>
+                                        <div class="col-4 text-center">
+                                            <span t-esc="(o.scheduled_date or o.date_done).strftime('%d-%b-%Y') if (o.scheduled_date or o.date_done) else ''" style="font-size: 15px;"/>
+                                        </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-4 text-center" style="margin-bottom: 5px;">
@@ -236,10 +238,10 @@
         </template>
 
         <!-- Wrapper Template -->
-        <template id="amanera_do">
+        <template id="amanera_receipt">
             <t t-call="web.html_container">
                 <t t-foreach="docs" t-as="o">
-                    <t t-call="amanera_do_template" t-lang="o.partner_id.lang"/>
+                    <t t-call="amanera_receipt_template" t-lang="o.partner_id.lang"/>
                 </t>
             </t>
         </template>
