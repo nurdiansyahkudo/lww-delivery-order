@@ -14,6 +14,7 @@
         'views/spartadua_receipt_template.xml',
         'views/pratama_receipt_template.xml',
         'views/imadea_receipt_template.xml',
+        'views/amanera_receipt_template.xml',
 
         # DELIVERY ORDER
         'report/lww_do_report.xml',
