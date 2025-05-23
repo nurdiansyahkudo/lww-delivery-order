@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<oreceipto>
     <data>
         <!-- Template for Kwitansi -->
-        <template id="amanera_do_template">
+        <template id="amanera_receipt_template">
             <t t-call="web.external_layout">
-                <t t-foreach="docs" t-as="o">
+                <t t-foreach="receiptcs" t-as="o">
                     <!-- Header Section -->
                     <div class="row" style="border-bottom: 2px solid rgb(0, 0, 0);">
                         <div class="col-6" style="height: 150px; display: flex; flex-direction: column; justify-content: center;">
@@ -17,7 +17,7 @@
                                 <div class="row">
                                     <h1 style="font-size: 1.5rem;">
                                         <strong>
-                                            <span t-esc="(o.name + ' ' + o.no_do) if o.name and o.no_do else (o.name or o.no_do or '')"/>
+                                            <span t-esc="(o.name + ' ' + o.no_receipt) if o.name and o.no_receipt else (o.name or o.no_receipt or '')"/>
                                         </strong>
                                     </h1>
                                 </div>
@@ -36,7 +36,7 @@
                                 </p>
                             </div>
                             <div style="text-align: right; margin-top: 8px; font-size: 16px; font-weight: bold;">
-                                Tgl. : <span t-esc="(o.scheduled_date or o.date_done).strftime('%d-%b-%Y') if (o.scheduled_date or o.date_done) else ''" />
+                                Tgl. : <span t-esc="(o.scheduled_date or o.date_receiptne).strftime('%d-%b-%Y') if (o.scheduled_date or o.date_receiptne) else ''" />
                             </div>
                         </div>
                     </div>
@@ -244,7 +244,7 @@
                                         <div class="col-4 text-center"></div>
                                         <div class="col-4 text-center"></div>
                                         <div class="col-4 text-center">
-                                            <span t-esc="(o.scheduled_date or o.date_done).strftime('%d-%b-%Y') if (o.scheduled_date or o.date_done) else ''" style="font-size: 15px;"/>
+                                            <span t-esc="(o.scheduled_date or o.date_receiptne).strftime('%d-%b-%Y') if (o.scheduled_date or o.date_receiptne) else ''" style="font-size: 15px;"/>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -276,12 +276,12 @@
         </template>
 
         <!-- Wrapper Template -->
-        <template id="amanera_do">
+        <template id="amanera_receipt">
             <t t-call="web.html_container">
-                <t t-foreach="docs" t-as="o">
-                    <t t-call="amanera_do_template" t-lang="o.partner_id.lang"/>
+                <t t-foreach="receiptcs" t-as="o">
+                    <t t-call="amanera_receipt_template" t-lang="o.partner_id.lang"/>
                 </t>
             </t>
         </template>
     </data>
-</odoo>
+</oreceipto>
