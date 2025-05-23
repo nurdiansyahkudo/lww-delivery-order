@@ -166,7 +166,7 @@
         </record>
 
         <!-- AMANERA BERSAMA ABADI -->
-        <report id="action_report_amanera_receipt" model="ir.actions.report">
+        <record id="action_report_amanera_receipt" model="ir.actions.report">
             <field name="name">Print Receipt Amanera</field>
             <field name="model">stock.picking</field>
             <field name="report_name">lww_delivery.amanera_receipt_template</field>
