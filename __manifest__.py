@@ -27,6 +27,7 @@
         # DELIVERY ORDER NO HEADER
         'views/lww_do_template_no_header.xml',
         'views/imadea_do_template_no_header.xml',
+        'views/amanera_do_template_no_header.xml',
 
         # FORM VIEW
         'views/stock_picking_view.xml',
