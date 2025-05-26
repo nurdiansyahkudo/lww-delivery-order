@@ -210,7 +210,7 @@
             <field name="paperformat_id" ref="lww_delivery.paperformat_portrait"/>
         </record>
 
-        AMANERA BERSAMA ABADI NO HEADER
+        <!-- AMANERA BERSAMA ABADI NO HEADER -->
         <record id="action_report_amanera_do_no_header" model="ir.actions.report">
             <field name="name">Print DO without Header</field>
             <field name="model">stock.picking</field>
