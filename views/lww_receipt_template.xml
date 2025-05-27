@@ -211,9 +211,15 @@
                                                 <td class="text-center" style="font-weight: bold;"><span t-esc="counter" style="font-weight: bold; text-align: center;"/></td>
                                             <!-- Serial Number -->
                                                 <td class="text-center" style="font-size: 15px;">
-                                                    <t t-foreach="line.move_line_ids" t-as="move_line">
-                                                        <span t-esc="move_line.lot_id.name"/>
-                                                        <t t-if="not loop.last">, </t>
+                                                    <t t-set="lot_lines" t-value="line.move_line_ids"/>
+                                                    <t t-if="lot_lines">
+                                                        <t t-foreach="lot_lines" t-as="move_line" t-index="i">
+                                                            <span t-esc="move_line.lot_id.name"/>
+                                                            <t t-if="i != len(lot_lines) - 1">, </t>
+                                                        </t>
+                                                    </t>
+                                                    <t t-if="not lot_lines">
+                                                        <span>-</span>
                                                     </t>
                                                 </td>
                                             <!-- Part Number -->
