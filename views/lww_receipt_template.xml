@@ -210,7 +210,15 @@
                                             <!-- No -->
                                                 <td class="text-center" style="font-weight: bold;"><span t-esc="counter" style="font-weight: bold; text-align: center;"/></td>
                                             <!-- Serial Number -->
-                                                <td class="text-center" style="font-size: 15px;"><span t-esc="line.move_line_ids.lot_name or ''" style="font-size: 15px;"/></td>
+                                                <td class="text-center" style="font-size: 15px;">
+                                                    <t t-set="lots" t-value="line.move_line_ids.filtered(lambda l: l.lot_name)"/>
+                                                    <t t-if="lots">
+                                                        <t t-foreach="lots" t-as="ml" t-index="i">
+                                                            <span t-esc="ml.lot_name"/>
+                                                            <t t-if="i != len(lots) - 1">, </t>
+                                                        </t>
+                                                    </t>
+                                                </td>
                                             <!-- Part Number -->
                                                 <td class="text-center" style="font-size: 15px;"><span t-esc="line.product_id.default_code or ''" style="font-size: 15px;"/></td>
                                             <!-- Product Name -->
@@ -248,6 +256,8 @@
                                         </div>
                                     </div>
                                     <div class="row">
+                                        <div class="col-4 text-center"></div>
+                                        <div class="col-4 text-center"></div>
                                         <div class="col-4 text-center" style="margin-bottom: 5px;">
                                             <p>RECEIVED BY</p>
                                             <p style="margin-top: 60px;">
