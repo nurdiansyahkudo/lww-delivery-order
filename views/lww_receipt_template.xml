@@ -210,7 +210,11 @@
                                             <!-- No -->
                                                 <td class="text-center" style="font-weight: bold;"><span t-esc="counter" style="font-weight: bold; text-align: center;"/></td>
                                             <!-- Serial Number -->
-                                                <td class="text-center" style="font-size: 15px;"><span t-esc="line.lot_name or ''" style="font-size: 15px;"/></td>
+                                                <td class="text-center" style="font-size: 15px;">
+                                                    <t t-foreach="line.move_line_ids" t-as="ml">
+                                                        <span t-esc="ml.lot_id.name"/> <br/>
+                                                    </t>
+                                                </td>
                                             <!-- Part Number -->
                                                 <td class="text-center" style="font-size: 15px;"><span t-esc="line.product_id.default_code or ''" style="font-size: 15px;"/></td>
                                             <!-- Product Name -->
