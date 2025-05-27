@@ -109,7 +109,7 @@
                                             <p style='text-align: left; font-size: 16px;'>Name </p>
                                         </div>
                                         <div class='col-9' style='font-size: 16px; border: 1px;'>
-                                            : <span t-esc='o.location_dest_id.location_id/o.location_dest_id.name'/>
+                                            : <span t-esc="(o.location_dest_id.location_id.name or '') + '/' + (o.location_dest_id.name or '')"/>
                                         </div>
                                     </div>
                                     <div class='row'>
