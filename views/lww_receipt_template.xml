@@ -184,7 +184,10 @@
                                         <!-- PRJ/PO NO -->
                                             <td class="text-center" style="font-size: 15px;"><span t-esc="o.project_id.name or ''" style="font-size: 15px;"/></td>
                                         <!-- SPK/PO CUSTOMER -->
-                                            <td class="text-center" style="font-size: 15px;"><span t-esc="o.origin or ''" style="font-size: 15px;"/></td>
+                                            <t t-set="po" t-value="env['purchase.order'].search([('name', '=', o.group_id)], limit=1)"/>
+                                            <td class="text-center" style="font-size: 15px;">
+                                                <span t-esc="po.partner_ref or ''"/>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
