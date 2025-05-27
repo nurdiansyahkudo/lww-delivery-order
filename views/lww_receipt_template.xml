@@ -212,11 +212,10 @@
                                             <!-- Serial Number -->
                                                 <td class="text-center" style="font-size: 15px;">
                                                     <t t-set="lots" t-value="line.move_line_ids.filtered(lambda l: l.lot_name)"/>
-                                                    <t t-set="lots_len" t-value="len(lots)"/>
-                                                    <t t-if="lots_len &gt; 0">
-                                                        <t t-foreach="lots" t-as="ml" t-index="i">
-                                                            <span t-esc="ml.lot_name"/>
-                                                            <t t-if="i &lt; lots_len - 1">, </t>
+                                                    <t t-if="lots">
+                                                        <t t-foreach="lots" t-as="ml" t-foreach-loop="loop">
+                                                            <t t-esc="ml.lot_name"/>
+                                                            <t t-if="not loop.last">, </t>
                                                         </t>
                                                     </t>
                                                 </td>
