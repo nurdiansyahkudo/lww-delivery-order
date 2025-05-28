@@ -76,6 +76,7 @@
                                             <span t-esc="o.origin or ''"/>
                                         </td>
                                     </tr>
+                                </tbody>
                             </table>
                         </div>
                     </div>
