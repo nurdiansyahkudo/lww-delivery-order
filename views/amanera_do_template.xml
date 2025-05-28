@@ -59,12 +59,23 @@
                         </div>
                         <div class="col-6" style="margin-top: 10px; margin-bottom: 5px; padding-left: 5px;">
                             <table class="table table-sm" style="margin-bottom: 5px; border: 1px solid black; width: 100%;">
-                                <tr>
+                                <!-- <tr>
                                     <th style="font-size: 16px; text-align: center;">DATE</th>
                                         <td class="text-center" style="font-size: 15px;">
                                             <span t-esc="o.date or ''"/>
                                         </td>
-                                </tr>
+                                </tr> -->
+                                <thead style="border: 0.5px;">
+                                    <tr>
+                                        <th style="font-size: 16px; text-align: center; font-weight: bold;">Referensi Kami : </th>
+                                    </tr>
+                                </thead>
+                                <tbody style="border: none;">
+                                    <tr>
+                                        <td class="text-center" style="font-size: 15px;">
+                                            <span t-esc="o.origin or ''"/>
+                                        </td>
+                                    </tr>
                             </table>
                         </div>
                     </div>
