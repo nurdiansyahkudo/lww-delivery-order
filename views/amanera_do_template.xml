@@ -50,9 +50,15 @@
                         <div class="col-6" style="margin-top: 10px; margin-bottom: 5px; padding-right: 5px;">   
                             <table class="table table-sm" style="margin-bottom: 5px; border: 1px solid black; width: 100%;">
                                 <tr>
-                                    <th style="font-size: 16px; text-align: left;">Customer</th>
+                                    <th style="font-size: 16px; text-align: center;">Customer</th>
                                         <td class="text-center" style="font-size: 15px;">
                                             <span t-esc="(o.partner_id.parent_id.name or o.partner_id.name) if (o.partner_id.parent_id.name or o.partner_id.name) else ''"/>
+                                        </td>
+                                    <th style="font-size: 16px; text-align: center;">Alamat Kirim</th>
+                                        <td class="text-center" style="font-size: 15px;">
+                                            <span t-esc="(o.partner_id.parent_id.name or o.partner_id.name) if (o.partner_id.parent_id.name or o.partner_id.name) else ''"/> <br/>
+                                            <span t-esc="(o.partner_id.parent_id.street or o.partner_id.street) if (o.partner_id.parent_id.street or o.partner_id.street) else ''"/>
+                                            <span t-esc="(o.partner_id.parent_id.city or o.partner_id.city) if (o.partner_id.parent_id.city or o.partner_id.city) else ''"/>
                                         </td>
                                 </tr>
                             </table>
@@ -64,6 +70,7 @@
                                         <td class="text-center" style="font-size: 15px;">
                                             <span t-esc="o.date or ''"/>
                                         </td>
+                                    
                                 </tr>
                             </table>
                         </div>
