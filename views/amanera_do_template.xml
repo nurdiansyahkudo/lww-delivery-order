@@ -7,6 +7,15 @@
                 <t t-foreach="docs" t-as="o">
                     <!-- Header Section -->
                     <div class="row">
+                        <div class="col-6 d-flex align-items-center justify-content-center" style="height: 150px;">
+                            <div class="text-center" style="font-size: 2rem;">
+                                <div class="row">
+                                    <h1 style="font-size: 2rem;">
+                                        <strong>DELIVERY ORDER</strong>
+                                    </h1>
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-6">
                             <div style="font-size: 13px; line-height: 1.5; text-align: left;">
                                 <p style="font-weight: bold; margin-bottom: 2px; font-size: 25px;"><em><span t-esc="o.company_id.name or ''" style="font-weight: bold;"/></em></p>
@@ -17,15 +26,6 @@
                                     Phone: <span t-esc="o.company_id.phone"/><br/>
                                     Fax: <span t-esc="o.company_id.mobile"/>
                                 </p>
-                            </div>
-                        </div>
-                        <div class="col-6 d-flex align-items-center justify-content-center" style="height: 150px;">
-                            <div class="text-center" style="font-size: 2rem;">
-                                <div class="row">
-                                    <h1 style="font-size: 2rem;">
-                                        <strong>DELIVERY ORDER</strong>
-                                    </h1>
-                                </div>
                             </div>
                         </div>
                     </div>
