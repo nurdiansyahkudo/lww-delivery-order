@@ -27,9 +27,7 @@
                                     Fax: <span t-esc="o.company_id.mobile"/>
                                 </p>
                                 <p style="font-weight: bold; margin-bottom: 2px; font-size: 17px; text-align: center;">
-                                    <strong>
-                                        TGL.: <span t-esc="o.company_id.name or ''" style="font-weight: bold;"/>
-                                    </strong>
+                                    TGL.: <span t-esc="o.company_id.name or ''" style="font-weight: bold;"/>
                                 </p>
                             </div>
                         </div>
