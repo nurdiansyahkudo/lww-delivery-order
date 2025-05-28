@@ -11,13 +11,13 @@
                             <div class="text-center" style="font-size: 2rem;">
                                 <div class="row">
                                     <h1 style="font-size: 2rem;">
-                                        <strong>DELIVERY ORDER</strong>
+                                        <strong>SURAT PENGANTAR</strong>
                                     </h1>
                                 </div>
                             </div>
                         </div>
                         <div class="col-6">
-                            <div style="font-size: 13px; line-height: 1.5; text-align: left;">
+                            <div style="font-size: 13px; line-height: 1.5; text-align: right;">
                                 <p style="font-weight: bold; margin-bottom: 2px; font-size: 25px;"><em><span t-esc="o.company_id.name or ''" style="font-weight: bold;"/></em></p>
                                 <p>
                                     <span t-esc="o.company_id.street"/> <br/>
@@ -25,6 +25,11 @@
                                     <span t-esc="o.company_id.country_id.name"/><br/>
                                     Phone: <span t-esc="o.company_id.phone"/><br/>
                                     Fax: <span t-esc="o.company_id.mobile"/>
+                                </p>
+                                <p style="font-weight: bold; margin-bottom: 2px; font-size: 17px; text-align: center;">
+                                    <strong>
+                                        TGL.: <span t-esc="o.company_id.name or ''" style="font-weight: bold;"/>
+                                    </strong>
                                 </p>
                             </div>
                         </div>
