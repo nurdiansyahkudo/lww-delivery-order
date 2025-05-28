@@ -37,6 +37,22 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="row">
+                                <p style="font-weight: bold; margin-bottom: 2px; font-size: 17px; text-align: center;">
+                                    NO.: <span t-esc="o.date or ''"/>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="row">
+                                <p style="font-weight: bold; margin-bottom: 2px; font-size: 17px; text-align: center;">
+                                    TGL.: <span t-esc="o.no_do or ''"/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                     <!-- NO and Date Section -->
                     <div class="row">
                         <div class="col-6" style="margin-top: 10px; margin-bottom: 5px; padding-right: 5px;">   
