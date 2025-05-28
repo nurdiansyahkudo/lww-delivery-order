@@ -55,6 +55,12 @@
                                             <span t-esc="(o.partner_id.parent_id.name or o.partner_id.name) if (o.partner_id.parent_id.name or o.partner_id.name) else ''"/>
                                         </td>
                                 </tr>
+                                <tr>
+                                    <th style="font-size: 16px; text-align: center;">Customer</th>
+                                        <td class="text-center" style="font-size: 15px;">
+                                            <span t-esc="(o.partner_id.parent_id.name or o.partner_id.name) if (o.partner_id.parent_id.name or o.partner_id.name) else ''"/>
+                                        </td>
+                                </tr>
                             </table>
                         </div>
                         <div class="col-6" style="margin-top: 10px; margin-bottom: 5px; padding-left: 5px;">
