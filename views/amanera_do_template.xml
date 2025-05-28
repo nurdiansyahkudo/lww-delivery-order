@@ -50,9 +50,9 @@
                         <div class="col-6" style="margin-top: 10px; margin-bottom: 5px; padding-right: 5px;">   
                             <table class="table table-sm" style="margin-bottom: 5px; border: 1px solid black; width: 100%;">
                                 <tr>
-                                    <th style="font-size: 16px; text-align: center;">NO</th>
+                                    <th style="font-size: 16px; text-align: left;">Customer</th>
                                         <td class="text-center" style="font-size: 15px;">
-                                            <span t-esc="o.no_do or ''"/>
+                                            <span t-esc="(o.partner_id.parent_id.name or o.partner_id.name) if (o.partner_id.parent_id.name or o.partner_id.name) else ''"/>
                                         </td>
                                 </tr>
                             </table>
