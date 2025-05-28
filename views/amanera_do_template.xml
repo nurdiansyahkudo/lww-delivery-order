@@ -13,6 +13,9 @@
                                     <h1 style="font-size: 2rem;">
                                         <strong>SURAT PENGANTAR</strong>
                                     </h1>
+                                    <p style="font-weight: bold; margin-bottom: 2px; font-size: 17px; text-align: center;">
+                                    NO.: <span t-esc="o.date or ''"/>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -27,7 +30,7 @@
                                     Fax: <span t-esc="o.company_id.mobile"/>
                                 </p>
                                 <p style="font-weight: bold; margin-bottom: 2px; font-size: 17px; text-align: center;">
-                                    TGL.: <span t-esc="o.company_id.name or ''" style="font-weight: bold;"/>
+                                    TGL.: <span t-esc="o.date or ''"/>
                                 </p>
                             </div>
                         </div>
