@@ -40,6 +40,11 @@
                         class="oe_highlight" 
                         string="Print Receipt"/>
             </xpath>
+
+            <!-- Customer field -->
+            <xpath expr="//field[@name='partner_id']" position="before">
+                <field name="customer_id" string="Customer" readonly="state in ['cancel', 'done']" placeholder="e.g. Lumber Inc" invisible="picking_type_code != 'outgoing'"/>
+            </xpath>
             
             <xpath expr="//field[@name='origin']" position="after">
                 <field name="print_template" widget="radio" invisible="picking_type_code != 'outgoing'"/>
