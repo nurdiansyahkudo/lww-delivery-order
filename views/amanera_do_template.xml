@@ -7,8 +7,17 @@
                 <t t-foreach="docs" t-as="o">
                     <!-- Header Section -->
                     <div class="row">
+                        <div class="col-6 d-flex align-items-center justify-content-center" style="height: 150px;">
+                            <div class="text-center" style="font-size: 2rem;">
+                                <div class="row">
+                                    <h1 style="font-size: 2rem;">
+                                        <strong>SURAT PENGANTAR</strong>
+                                    </h1>
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-6">
-                            <div style="font-size: 13px; line-height: 1.5; text-align: left;">
+                            <div style="font-size: 13px; line-height: 1.5; text-align: right;">
                                 <p style="font-weight: bold; margin-bottom: 2px; font-size: 25px;"><em><span t-esc="o.company_id.name or ''" style="font-weight: bold;"/></em></p>
                                 <p>
                                     <span t-esc="o.company_id.street"/> <br/>
@@ -19,13 +28,20 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="col-6 d-flex align-items-center justify-content-center" style="height: 150px;">
-                            <div class="text-center" style="font-size: 2rem;">
-                                <div class="row">
-                                    <h1 style="font-size: 2rem;">
-                                        <strong>DELIVERY ORDER</strong>
-                                    </h1>
-                                </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="row">
+                                <p style="font-weight: bold; margin-bottom: 2px; font-size: 17px; text-align: center;">
+                                    NO. :   <span t-esc="o.no_do or ''"/>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="row">
+                                <p style="font-weight: bold; margin-bottom: 2px; font-size: 17px; text-align: center;">
+                                    TGL. :   <span t-esc="o.date or ''"/>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -34,19 +50,45 @@
                         <div class="col-6" style="margin-top: 10px; margin-bottom: 5px; padding-right: 5px;">   
                             <table class="table table-sm" style="margin-bottom: 5px; border: 1px solid black; width: 100%;">
                                 <tr>
-                                    <th style="font-size: 16px; text-align: center;">NO</th>
+                                    <th style="font-size: 16px; text-align: center;">Customer</th>
                                         <td class="text-center" style="font-size: 15px;">
-                                            <span t-esc="o.no_do or ''"/>
+                                            <span t-esc="(o.partner_id.parent_id.name or o.partner_id.name) if (o.partner_id.parent_id.name or o.partner_id.name) else ''"/>
                                         </td>
                                 </tr>
                             </table>
                         </div>
                         <div class="col-6" style="margin-top: 10px; margin-bottom: 5px; padding-left: 5px;">
                             <table class="table table-sm" style="margin-bottom: 5px; border: 1px solid black; width: 100%;">
-                                <tr>
+                                <!-- <tr>
                                     <th style="font-size: 16px; text-align: center;">DATE</th>
                                         <td class="text-center" style="font-size: 15px;">
                                             <span t-esc="o.date or ''"/>
+                                        </td>
+                                </tr> -->
+                                <thead style="border: 0.5px;">
+                                    <tr>
+                                        <th style="font-size: 16px; text-align: center; font-weight: bold;">Referensi Kami : </th>
+                                    </tr>
+                                </thead>
+                                <tbody style="border: none;">
+                                    <tr>
+                                        <td class="text-center" style="font-size: 15px;">
+                                            <span t-esc="o.origin or ''"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6" style="margin-top: 10px; margin-bottom: 5px; padding-right: 5px;">   
+                            <table class="table table-sm" style="margin-bottom: 5px; border: 1px solid black; width: 100%;">
+                                <tr>
+                                    <th style="font-size: 16px; text-align: center;">Alamat Kirim</th>
+                                        <td class="text-center" style="font-size: 15px;">
+                                            <span t-esc="(o.partner_id.parent_id.name or o.partner_id.name) if (o.partner_id.parent_id.name or o.partner_id.name) else ''"/> <br/>
+                                            <span t-esc="(o.partner_id.parent_id.street or o.partner_id.street) if (o.partner_id.parent_id.street or o.partner_id.street) else ''"/>
+                                            <span t-esc="(o.partner_id.parent_id.city or o.partner_id.city) if (o.partner_id.parent_id.city or o.partner_id.city) else ''"/>
                                         </td>
                                 </tr>
                             </table>
