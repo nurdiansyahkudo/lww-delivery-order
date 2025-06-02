@@ -50,7 +50,7 @@
                 <div class="o_td_label">
                     <label for="customer_id" string="Customer" style="font-weight:bold;"/>
                 </div>
-                <field name="customer_id" readonly="state in ['cancel', 'done']" placeholder="e.g. Lumber Inc" invisible="picking_type_code != 'outgoing'"/>
+                <field name="customer_id" readonly="state in ['cancel', 'done']" placeholder="e.g. Lumber Inc" invisible="picking_type_code != 'outgoing'" nolabel="1"/>
             </xpath>
 
             <xpath expr="//field[@name='location_id']" position="after">
