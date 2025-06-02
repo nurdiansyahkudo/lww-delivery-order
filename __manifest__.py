@@ -32,7 +32,6 @@
 
         # FORM VIEW
         'views/stock_picking_view.xml',
-        'views/product_template_views.xml',
         
         # SECURITY (ACCESS)
         # 'security/ir.model.access.csv',
