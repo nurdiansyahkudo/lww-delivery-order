@@ -41,13 +41,16 @@
                         string="Print Receipt"/>
             </xpath>
 
-            <!-- Customer field -->
-            <xpath expr="//field[@name='partner_id']" position="after">
-                <field name="customer_id" string="Customer" readonly="state in ['cancel', 'done']" placeholder="e.g. Lumber Inc" invisible="picking_type_code != 'outgoing'"/>
-            </xpath>
-            
             <xpath expr="//field[@name='origin']" position="after">
                 <field name="print_template" widget="radio" invisible="picking_type_code != 'outgoing'"/>
+            </xpath>
+
+            <!-- Customer Label & Field (before partner_id and its dynamic labels) -->
+            <xpath expr="//div[label[@for='partner_id']]" position="before">
+                <div class="o_td_label">
+                    <label for="customer_id" string="Customer" style="font-weight:bold;"/>
+                </div>
+                <field name="customer_id" readonly="state in ['cancel', 'done']" placeholder="e.g. Lumber Inc" invisible="picking_type_code != 'outgoing'" nolabel="1"/>
             </xpath>
 
             <xpath expr="//field[@name='location_id']" position="after">
