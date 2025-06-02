@@ -85,6 +85,20 @@
                                     </tr>
                                 </tbody>
                             </table>
+                            <table class="table table-sm" style="margin-bottom: 5px; border: 1px solid black; width: 100%;">
+                                <thead>
+                                    <tr>
+                                        <th style="font-size: 16px; text-align: center; font-weight: bold;">Referensi / PO. Pelanggan : </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center" style="font-size: 15px;">
+                                            <span t-esc="o.origin or ''"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                     <!-- Main Section -->
