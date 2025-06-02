@@ -46,7 +46,7 @@
                         </div>
                     </div>
                     <!-- NO and Date Section -->
-                    <div class="row">
+                    <div class="row" style="border-top: 2px solid rgb(12, 9, 208);">
                         <div class="col-6" style="margin-top: 10px; margin-bottom: 5px; padding-right: 5px;">   
                             <!-- Tabel Customer -->
                             <table class="table table-sm" style="margin-bottom: 5px; border: 0.5px solid black; width: 100%;">
@@ -139,24 +139,38 @@
                                     </tbody>
                                 </table>
                             </div>
+                            <div class="row" style="margin-bottom: 5px; margin-top: 10px;">
+                                <div class="col-12">
+                                    <table class="table table-sm" style="margin-bottom: 5px; border: 0.5px solid black; width: 100%;">
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-center" style="font-size: 15px;">
+                                                    <span style="font-weight: bold; font-size: 15px;">Catatan : </span>
+                                                    <span t-esc="o.origin or ''"/>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                             <div style="page-break-after:auto;">
                                 <!-- Signature Section -->
                                 <div style="page-break-after: auto;">
                                     <div class="row">
                                         <div class="col-4 text-center" style="margin-bottom: 5px;">
-                                            <p>RECEIVED BY</p>
+                                            <p>Barang telah diterima dengan BAIK dan CUKUP,</p>
                                             <p style="margin-top: 80px;">
                                                 ( <span style="display: inline-block; min-width: 150px; border-bottom: 1px solid black;"></span> )
                                             </p>
                                         </div>
                                         <div class="col-4 text-center" style="margin-bottom: 5px;">
-                                            <p>SHIPPER</p>
+                                            <p>Pengirim,</p>
                                             <p style="margin-top: 80px;">
                                                 ( <span style="display: inline-block; min-width: 150px; border-bottom: 1px solid black;"></span> )
                                             </p>
                                         </div>
                                         <div class="col-4 text-center" style="margin-bottom: 5px;">
-                                            <p>APPROVED BY</p>
+                                            <p>Hormat Kami,</p>
                                             <p style="margin-top: 80px;">
                                                ( <span t-esc="o.employee_id.name or ''" style="font-size: 16px; min-width: 150px; border-bottom: 1px solid black; display: inline-block;"/> )
                                             </p>
