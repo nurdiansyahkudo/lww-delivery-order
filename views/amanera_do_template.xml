@@ -143,7 +143,7 @@
                                 <div class="col-12">
                                     <div style="border: 0.5px solid black; padding: 8px; font-size: 15px;">
                                         <span style="font-weight: bold;">Catatan:</span>
-                                        <span t-esc="o.note or ''"/></span>
+                                        <span t-esc="o.note or ''"></span>
                                     </div>
                                 </div>
                             </div>
