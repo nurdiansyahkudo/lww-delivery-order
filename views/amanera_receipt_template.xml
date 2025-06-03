@@ -51,7 +51,7 @@
                             <!-- Tabel Customer -->
                             <table class="table table-sm" style="margin-bottom: 5px; border: 0.5px solid black; width: 100%;">
                                 <tr>
-                                    <th style="font-size: 16px; text-align: center; font-weight: bold">Customer</th>
+                                    <th style="font-size: 16px; text-align: center; font-weight: bold">SUPPLIER</th>
                                     <td class="text-center" style="font-size: 15px;">
                                         <span t-esc="(o.partner_id.parent_id.name or o.partner_id.name) if (o.partner_id.parent_id.name or o.partner_id.name) else ''"/>
                                     </td>
@@ -60,7 +60,7 @@
                             <!-- Tabel Alamat Kirim -->
                             <table class="table table-sm" style="margin-bottom: 5px; border: 0.5px solid black; width: 100%;">
                                 <tr>
-                                    <th style="font-size: 16px; text-align: center; font-weight: bold">Alamat Kirim</th>
+                                    <th style="font-size: 16px; text-align: center; font-weight: bold">PENERIMA</th>
                                         <td class="text-center" style="font-size: 15px;">
                                             <span t-esc="(o.partner_id.parent_id.name or o.partner_id.name) if (o.partner_id.parent_id.name or o.partner_id.name) else ''"/> <br/>
                                             <span t-esc="(o.partner_id.parent_id.street or o.partner_id.street) if (o.partner_id.parent_id.street or o.partner_id.street) else ''"/>
@@ -74,7 +74,7 @@
                             <table class="table table-sm" style="margin-bottom: 5px; border: 0.5px solid black; width: 100%;">
                                 <thead>
                                     <tr>
-                                        <th style="font-size: 16px; text-align: center; font-weight: bold;">Referensi Kami : </th>
+                                        <th style="font-size: 16px; text-align: center; font-weight: bold;">Our Reff. : </th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -88,7 +88,7 @@
                             <table class="table table-sm" style="margin-bottom: 5px; border: 0.5px solid black; width: 100%;">
                                 <thead>
                                     <tr>
-                                        <th style="font-size: 16px; text-align: center; font-weight: bold;">Referensi / PO. Pelanggan : </th>
+                                        <th style="font-size: 16px; text-align: center; font-weight: bold;">Supp. Referensi / SO. Pelanggan : </th>
                                     </tr>
                                 </thead>
                                 <tbody>
