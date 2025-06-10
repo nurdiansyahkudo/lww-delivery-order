@@ -53,7 +53,7 @@
                 <div class="o_td_label">
                     <label for="customer_id" string="Delivery Address" style="font-weight:bold;"/>
                 </div>
-                <field name="customer_id" readonly="state in ['cancel', 'done']" placeholder="e.g. Lumber Inc" invisible="picking_type_code != 'outgoing'" nolabel="1"/>
+                <field name="customer_id" readonly="state in ['cancel', 'done']" placeholder="Choose Customer..." invisible="picking_type_code != 'outgoing'" nolabel="1"/>
             </xpath>
 
             <xpath expr="//field[@name='location_id']" position="after">
