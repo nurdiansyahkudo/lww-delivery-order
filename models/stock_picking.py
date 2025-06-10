@@ -13,7 +13,7 @@ class StockPicking(models.Model):
         store=True
     )
     customer_id = fields.Many2one(
-        'res.partner', 
+        'res.partner', sring="Delivery Address"
         check_company=True, index='btree_not_null')
     sale_id = fields.Many2one('sale.order', compute="_compute_sale_id", inverse="_set_sale_id", string="Sales Order", store=True, index='btree_not_null')
     project_id = fields.Many2one('project.project', string="Project")
