@@ -29,10 +29,10 @@ class StockPicking(models.Model):
             if rec.picking_type_code == 'outgoing' and not rec.project_id:
                 raise ValidationError("Project is required for Delivery Order.")
 
-    @api.onchange('customer_id')
-    def _onchange_customer_id(self):
+    @api.onchange('partner_id')
+    def _onchange_partner_id(self):
         return {
-            'domain': {'project_id': [('customer_id', '=', self.customer_id.id)]},
+            'domain': {'project_id': [('partner_id', '=', self.partner_id.id)]},
             'value': {'project_id': False},
         }
     

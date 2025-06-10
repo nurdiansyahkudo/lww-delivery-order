@@ -46,9 +46,12 @@
             </xpath>
 
             <!-- Customer Label & Field (before partner_id and its dynamic labels) -->
-            <xpath expr="//div[label[@for='partner_id']]" position="before">
+            <xpath expr="//label[@for='partner_id'][@string='Delivery Address']" position="attributes">
+                <attribute name="string">Customer</attribute>
+            </xpath>
+            <xpath expr="//div[label[@for='partner_id']]" position="after">
                 <div class="o_td_label">
-                    <label for="customer_id" string="Customer" style="font-weight:bold;"/>
+                    <label for="customer_id" string="Delivery Address" style="font-weight:bold;"/>
                 </div>
                 <field name="customer_id" readonly="state in ['cancel', 'done']" placeholder="e.g. Lumber Inc" invisible="picking_type_code != 'outgoing'" nolabel="1"/>
             </xpath>
@@ -84,7 +87,7 @@
         <field name="inherit_id" ref="project_stock.view_picking_form_inherit_project_stock"/>
         <field name="arch" type="xml">
             <xpath expr="//group[@name='other_infos']/field[@name='project_id']" position="replace">
-                <field name="project_id" groups="project.group_project_user" domain="[('partner_id', '=', customer_id)]"/>
+                <field name="project_id" groups="project.group_project_user" domain="[('partner_id', '=', partner_id)]"/>
             </xpath>
         </field>
     </record>
