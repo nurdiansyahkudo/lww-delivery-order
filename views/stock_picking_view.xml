@@ -46,7 +46,7 @@
             </xpath>
 
             <!-- Customer Label & Field (before partner_id and its dynamic labels) -->
-            <xpath expr='//label[@for="partner_id"][@invisible="picking_type_code != &quot;outgoing&quot;"]' position="replace">
+            <xpath expr='//label[@for="partner_id"][@invisible="picking_type_code != 'outgoing'"]' position="replace">
                 <label for="partner_id" string="Customer" style="font-weight:bold;" invisible="picking_type_code != 'outgoing'"/>
             </xpath>
             <xpath expr="//div[label[@for='partner_id']]" position="after">
