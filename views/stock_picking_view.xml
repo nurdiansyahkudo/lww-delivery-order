@@ -49,11 +49,13 @@
             <xpath expr="//div[@class='o_td_label']/label[contains(@invisible, 'outgoing')]" position="attributes">
                 <attribute name="string">Customer</attribute>
             </xpath>
-            <xpath expr="//div[@class='o_td_label']" position="inside">
-                <label for="customer_id" string="Delivery Address" style="font-weight:bold;" invisible="picking_type_code != 'outgoing'"/>
+            <xpath expr="//div[@class='o_td_label']" position="after">
+                <div class="o_td_label">
+                    <label for="customer_id" string="Delivery Address" style="font-weight:bold;" invisible="picking_type_code != 'outgoing'"/>
+                </div>
             </xpath>
             <xpath expr="//field[@name='partner_id']" position="after">
-                <field name="customer_id" readonly="state in ['cancel', 'done']" placeholder="Delivery Address" invisible="picking_type_code != 'outgoing'" nolabel="1"/>
+                <field name="customer_id" readonly="state in ['cancel', 'done']" placeholder="Delivery Address..." invisible="picking_type_code != 'outgoing'" nolabel="1"/>
             </xpath>
 
             <xpath expr="//field[@name='location_id']" position="after">
