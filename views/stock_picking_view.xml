@@ -49,7 +49,7 @@
             <xpath expr="//div[@class='o_td_label']/label[contains(@invisible, 'outgoing')]" position="attributes">
                 <attribute name="string">Customer</attribute>
             </xpath>
-            <xpath expr="//div[label[@for='partner_id']]" position="after">
+            <xpath expr="//div[field[@name='partner_id']]" position="before">
                 <div class="o_td_label">
                     <label for="customer_id" string="Delivery Address" style="font-weight:bold;"/>
                 </div>
